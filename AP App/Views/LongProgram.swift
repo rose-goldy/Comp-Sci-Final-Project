@@ -42,133 +42,133 @@ struct LongProgram: View {
     
     func correctLineLevel (level: String) -> Double {
        if (level) == "0" {
-           let lineValue = (Double(lineGOE)! * 0.1 * line.level0) + line.level0
+           let lineValue = (Double(lineGOE)! * 0.1 * line.level00) + line.level00
            return lineValue
        } else if (level) == "1" {
-            let lineValue = (Double(lineGOE)! * 0.1 * line.level1) + line.level1
+            let lineValue = (Double(lineGOE)! * 0.1 * line.level01) + line.level01
            return lineValue
        } else if (level) == "2" {
-            let lineValue = (Double(lineGOE)! * 0.1 * line.level2) + line.level2
+            let lineValue = (Double(lineGOE)! * 0.1 * line.level02) + line.level02
            return lineValue
        } else if (level) == "3" {
-            let lineValue = (Double(lineGOE)! * 0.1 * line.level3) + line.level3
+            let lineValue = (Double(lineGOE)! * 0.1 * line.level03) + line.level03
            return lineValue
        } else {
-            let lineValue = (Double(lineGOE)! * 0.1 * line.level4) + line.level4
+            let lineValue = (Double(lineGOE)! * 0.1 * line.level04) + line.level04
            return lineValue
         }
     }
     
     func correctSpinLevel (level: String) -> Double {
        if (level) == "0" {
-           let spinValue = (Double(spinGOE)! * 0.1 * spin.level0) + spin.level0
+           let spinValue = (Double(spinGOE)! * 0.1 * spin.level00) + spin.level00
            return spinValue
        } else if (level) == "1" {
-           let spinValue = (Double(spinGOE)! * 0.1 * spin.level1) + spin.level1
+           let spinValue = (Double(spinGOE)! * 0.1 * spin.level01) + spin.level01
            return spinValue
        } else if (level) == "2" {
-           let spinValue = (Double(spinGOE)! * 0.1 * spin.level2) + spin.level2
+           let spinValue = (Double(spinGOE)! * 0.1 * spin.level02) + spin.level02
            return spinValue
        } else if (level) == "3" {
-           let spinValue = (Double(spinGOE)! * 0.1 * spin.level3) + spin.level3
+           let spinValue = (Double(spinGOE)! * 0.1 * spin.level03) + spin.level03
            return spinValue
        } else {
-           let spinValue = (Double(spinGOE)! * 0.1 * spin.level4) + spin.level4
+           let spinValue = (Double(spinGOE)! * 0.1 * spin.level04) + spin.level04
            return spinValue
         }
     }
     
     func correctMovesLevel (level: String) -> Double {
        if (level) == "0" {
-           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level0) + longMoves.level0
+           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level00) + longMoves.level00
            return lMovesValue
        } else if (level) == "1" {
-           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level1) + longMoves.level1
+           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level01) + longMoves.level01
            return lMovesValue
        } else if (level) == "2" {
-           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level2) + longMoves.level2
+           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level02) + longMoves.level02
            return lMovesValue
        } else if (level) == "3" {
-           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level3) + longMoves.level3
+           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level03) + longMoves.level03
            return lMovesValue
        } else {
-           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level4) + longMoves.level4
+           let lMovesValue = (Double(lMovesGOE)! * 0.1 * longMoves.level04) + longMoves.level04
            return lMovesValue
         }
     }
     
     func correctCircleLevel (level: String) -> Double {
        if (level) == "0" {
-           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level0) + travelingElement.level0
+           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level00) + travelingElement.level00
            return circleValue
        } else if (level) == "1" {
-           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level1) + travelingElement.level1
+           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level01) + travelingElement.level01
            return circleValue
        } else if (level) == "2" {
-           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level2) + travelingElement.level2
+           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level02) + travelingElement.level02
            return circleValue
        } else if (level) == "3" {
-           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level3) + travelingElement.level3
+           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level03) + travelingElement.level03
            return circleValue
        } else {
-           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level4) + travelingElement.level4
+           let circleValue = (Double(circleGOE)! * 0.1 * travelingElement.level04) + travelingElement.level04
            return circleValue
         }
     }
     
     func correctWhipLevel (level: String) -> Double {
        if (level) == "0" {
-           let whipValue = (Double(whipGOE)! * 0.1 * whip.level0) + whip.level0
+           let whipValue = (Double(whipGOE)! * 0.1 * whip.level00) + whip.level00
            return whipValue
        } else if (level) == "1" {
-           let whipValue = (Double(whipGOE)! * 0.1 * whip.level1) + whip.level1
+           let whipValue = (Double(whipGOE)! * 0.1 * whip.level01) + whip.level01
            return whipValue
        } else if (level) == "2" {
-           let whipValue = (Double(whipGOE)! * 0.1 * whip.level2) + whip.level2
+           let whipValue = (Double(whipGOE)! * 0.1 * whip.level02) + whip.level02
            return whipValue
        } else if (level) == "3" {
-           let whipValue = (Double(whipGOE)! * 0.1 * whip.level3) + whip.level3
+           let whipValue = (Double(whipGOE)! * 0.1 * whip.level03) + whip.level03
            return whipValue
        } else {
-           let whipValue = (Double(whipGOE)! * 0.1 * whip.level4) + whip.level4
+           let whipValue = (Double(whipGOE)! * 0.1 * whip.level04) + whip.level04
            return whipValue
         }
     }
     
     func correctAngledLevel (level: String) -> Double {
        if (level) == "0" {
-           let angledValue = (Double(angledGOE)! * 0.1 * angled.level0) + angled.level0
+           let angledValue = (Double(angledGOE)! * 0.1 * angled.level00) + angled.level00
            return angledValue
        } else if (level) == "1" {
-           let angledValue = (Double(angledGOE)! * 0.1 * angled.level1) + angled.level1
+           let angledValue = (Double(angledGOE)! * 0.1 * angled.level01) + angled.level01
            return angledValue
        } else if (level) == "2" {
-           let angledValue = (Double(angledGOE)! * 0.1 * angled.level2) + angled.level2
+           let angledValue = (Double(angledGOE)! * 0.1 * angled.level02) + angled.level02
            return angledValue
        } else if (level) == "3" {
-           let angledValue = (Double(angledGOE)! * 0.1 * angled.level3) + angled.level3
+           let angledValue = (Double(angledGOE)! * 0.1 * angled.level03) + angled.level03
            return angledValue
        } else {
-           let angledValue = (Double(angledGOE)! * 0.1 * angled.level4) + angled.level4
+           let angledValue = (Double(angledGOE)! * 0.1 * angled.level04) + angled.level04
            return angledValue
         }
     }
     
     func correctNoHoldLevel (level: String) -> Double {
        if (level) == "0" {
-           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level0) + longNoHold.level0
+           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level00) + longNoHold.level00
            return lNoHoldValue
        } else if (level) == "1" {
-           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level1) + longNoHold.level1
+           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level01) + longNoHold.level01
            return lNoHoldValue
        } else if (level) == "2" {
-           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level2) + longNoHold.level2
+           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level02) + longNoHold.level02
            return lNoHoldValue
        } else if (level) == "3" {
-           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level3) + longNoHold.level3
+           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level03) + longNoHold.level03
            return lNoHoldValue
        } else {
-           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level4) + longNoHold.level4
+           let lNoHoldValue = (Double(lNoHoldGOE)! * 0.1 * longNoHold.level04) + longNoHold.level04
            return lNoHoldValue
         }
     }
@@ -306,7 +306,7 @@ struct LongProgram: View {
                     finalWhipValue = String(format: "%.2f", whippp)
                     finalAngledValue = String(format: "%.2f", angleddd)
                     finallNoHoldValue = String(format: "%.2f", noHolddd)
-                    let liftsValue = (Double(liftsGOE)! * 0.1 * creativeLift.level1) + creativeLift.level1
+                    let liftsValue = (Double(liftsGOE)! * 0.1 * creativeLift.level01) + creativeLift.level01
                     finalLiftsValue = String(format: "%.2f", liftsValue)
                     let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
                     finalComponentScore = String(format: "%.2f", (componentScore * 2.7))

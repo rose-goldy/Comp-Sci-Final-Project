@@ -18,7 +18,6 @@
 		8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C329B8E47B00E360BB /* ShortProgram.swift */; };
 		8B49F5C629B8E48400E360BB /* LongProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C529B8E48400E360BB /* LongProgram.swift */; };
 		8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C729B8E52000E360BB /* Extensions.swift */; };
-		8B9A6A1629BB7BE800330DF5 /* DropDownAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +33,6 @@
 		8B49F5C329B8E47B00E360BB /* ShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortProgram.swift; sourceTree = "<group>"; };
 		8B49F5C529B8E48400E360BB /* LongProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongProgram.swift; sourceTree = "<group>"; };
 		8B49F5C729B8E52000E360BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAttempt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 				8B49F5C129B8E46C00E360BB /* FirstView.swift */,
 				8B49F5C329B8E47B00E360BB /* ShortProgram.swift */,
 				8B49F5C529B8E48400E360BB /* LongProgram.swift */,
-				8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,7 +184,6 @@
 			files = (
 				8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */,
 				8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */,
-				8B9A6A1629BB7BE800330DF5 /* DropDownAttempt.swift in Sources */,
 				8B49F5C229B8E46C00E360BB /* FirstView.swift in Sources */,
 				8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */,
 				8B49F5BE29B8E44D00E360BB /* ShortPButton.swift in Sources */,

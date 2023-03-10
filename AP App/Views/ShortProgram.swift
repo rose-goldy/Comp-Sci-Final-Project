@@ -33,95 +33,155 @@ struct ShortProgram: View {
     
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level0) + pivotBlock.level0
+            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00
             return pivotValue
         } else if (level) == "1" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level1) + pivotBlock.level1
+            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level01) + pivotBlock.level01
             return pivotValue
         } else if (level) == "2" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level2) + pivotBlock.level2
+            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level02) + pivotBlock.level02
             return pivotValue
         } else if (level) == "3" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level3) + pivotBlock.level3
+            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level03) + pivotBlock.level03
             return pivotValue
         } else {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level4) + pivotBlock.level4
+            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level04) + pivotBlock.level04
             return pivotValue
         }
     }
     
     func correctSNoHoldLevel (level: String) -> Double {
         if (level) == "0" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level0) + shortNoHold.level0
+            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level00) + shortNoHold.level00
             return sNoHoldValue
         } else if (level) == "1" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level1) + shortNoHold.level1
+            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level01) + shortNoHold.level01
             return sNoHoldValue
         } else if (level) == "2" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level2) + shortNoHold.level2
+            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level02) + shortNoHold.level02
             return sNoHoldValue
         } else if (level) == "3" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level3) + shortNoHold.level3
+            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level03) + shortNoHold.level03
             return sNoHoldValue
         } else {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level4) + shortNoHold.level4
+            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level04) + shortNoHold.level04
             return sNoHoldValue
         }
     }
     
-    func correctTriangleLevel (level: String) -> Double {
-        if (level) == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level0) + triangle.level0
+    func correctTriangleLevel (I: String, PI: String) -> Double {
+        if I == "0" && PI == "0" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level00) + triangle.level00
             return triangleValue
-        } else if (level) == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level1) + triangle.level1
+        } else if I == "0" && PI == "1" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level01) + triangle.level01
             return triangleValue
-        } else if (level) == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level2) + triangle.level2
+        } else if I == "0" && PI == "2" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level02) + triangle.level02
             return triangleValue
-        } else if (level) == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level3) + triangle.level3
+        } else if I == "0" && PI == "3" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level03) + triangle.level03
+            return triangleValue
+        } else if I == "0" && PI == "4" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level04) + triangle.level04
+            return triangleValue
+        } else if I == "1" && PI == "0" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level10) + triangle.level10
+            return triangleValue
+        } else if I == "1" && PI == "1" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level11) + triangle.level11
+            return triangleValue
+        } else if I == "1" && PI == "2" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level12) + triangle.level12
+            return triangleValue
+        } else if I == "1" && PI == "3" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level13) + triangle.level13
+            return triangleValue
+        } else if I == "1" && PI == "4" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level14) + triangle.level14
+            return triangleValue
+        } else if I == "2" && PI == "0" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level20) + triangle.level20
+            return triangleValue
+        } else if I == "2" && PI == "1" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level21) + triangle.level21
+            return triangleValue
+        } else if I == "2" && PI == "2" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level22) + triangle.level22
+            return triangleValue
+        } else if I == "2" && PI == "3" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level23) + triangle.level23
+            return triangleValue
+        } else if I == "2" && PI == "4" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level24) + triangle.level24
+            return triangleValue
+        } else if I == "3" && PI == "0" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level30) + triangle.level30
+            return triangleValue
+        } else if I == "3" && PI == "1" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level31) + triangle.level31
+            return triangleValue
+        } else if I == "3" && PI == "2" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level32) + triangle.level32
+            return triangleValue
+        } else if I == "3" && PI == "3" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level33) + triangle.level33
+            return triangleValue
+        } else if I == "3" && PI == "4" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level34) + triangle.level34
+            return triangleValue
+        } else if I == "4" && PI == "0" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level40) + triangle.level40
+            return triangleValue
+        } else if I == "4" && PI == "1" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level41) + triangle.level41
+            return triangleValue
+        } else if I == "4" && PI == "2" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level42) + triangle.level42
+            return triangleValue
+        } else if I == "4" && PI == "3" {
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level43) + triangle.level43
             return triangleValue
         } else {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level4) + triangle.level4
+           let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level44) + triangle.level44
             return triangleValue
         }
     }
     
     func correctTwizzlesLevel (level: String) -> Double {
         if (level) == "0" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level0) + twizzles.level0
+            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level00) + twizzles.level00
             return twizzlesValue
         } else if (level) == "1" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level1) + twizzles.level1
+            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level01) + twizzles.level01
             return twizzlesValue
         } else if (level) == "2" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level2) + twizzles.level2
+            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level02) + twizzles.level02
             return twizzlesValue
         } else if (level) == "3" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level3) + twizzles.level3
+            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level03) + twizzles.level03
             return twizzlesValue
         } else {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level4) + twizzles.level4
+            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level04) + twizzles.level04
             return twizzlesValue
         }
     }
     
     func correctSMovesLevel (level: String) -> Double {
         if (level) == "0" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level0) + shortMoves.level0
+            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level00) + shortMoves.level00
             return sMovesValue
         } else if (level) == "1" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level1) + shortMoves.level1
+            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level01) + shortMoves.level01
             return sMovesValue
         } else if (level) == "2" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level2) + shortMoves.level2
+            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level02) + shortMoves.level02
             return sMovesValue
         } else if (level) == "3" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level3) + shortMoves.level3
+            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level03) + shortMoves.level03
             return sMovesValue
         } else {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level4) + shortMoves.level4
+            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level04) + shortMoves.level04
             return sMovesValue
         }
     }
@@ -137,10 +197,12 @@ struct ShortProgram: View {
             
             HStack (spacing: 10) {
                 VStack (spacing: 23) {
-                    ForEach(0...shortElements.count-1, id: \.self) {index in
+                    ForEach(0...1, id: \.self) {index in
                         Text(shortElements[index].text)
                             .elementTitle()
                     }
+                    
+                    Text(shortElements[0].text)
                     
                 }
                 VStack (spacing: 22) {
@@ -423,7 +485,7 @@ struct ShortProgram: View {
                 Button(action: {
                     let pivottt = correctPivotLevel (level: "\(pivotLevel)")
                     let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
-                    let triangleee = correctTriangleLevel(level: "\(triangleI)")
+                    let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
                     let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
                     let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
                     
