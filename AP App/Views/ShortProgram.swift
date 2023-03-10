@@ -20,6 +20,7 @@ struct ShortProgram: View {
     @State var finalsMovesValue: String = ""
     @State var pivotLevel: String = "Level"
     @State var sNoHoldLevel: String = "Level"
+    @State var sNoHoldSteps: String = "Steps"
     @State var triangleI: String = "I"
     @State var trianglePI: String = "PI"
     @State var twizzlesLevel: String = "Level"
@@ -143,7 +144,7 @@ struct ShortProgram: View {
             let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level43) + triangle.level43
             return triangleValue
         } else {
-           let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level44) + triangle.level44
+            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level44) + triangle.level44
             return triangleValue
         }
     }
@@ -197,335 +198,328 @@ struct ShortProgram: View {
             
             HStack (spacing: 10) {
                 VStack (spacing: 23) {
-                    ForEach(0...1, id: \.self) {index in
+                    ForEach(0...shortElements.count-1, id: \.self) {index in
                         Text(shortElements[index].text)
                             .elementTitle()
                     }
-                    
-                    Text(shortElements[0].text)
                     
                 }
                 VStack (spacing: 22) {
                     
                     Menu {
-                       Button(action: {
-                           pivotLevel = "0"
-                       }, label: {
-                           Text("BV")
-                       })
-                       Button(action: {
-                           pivotLevel = "1"
-                       }, label: {
-                           Text("1")
-                       })
-                       Button(action: {
-                           pivotLevel = "2"
-                       }, label: {
-                           Text("2")
-                       })
-                       Button(action: {
-                           pivotLevel = "3"
-                       }, label: {
-                           Text("3")
-                       })
-                       Button(action: {
-                           pivotLevel = "4"
-                       }, label: {
-                           Text("4")
-                       })
-                       
-                   } label: {
-                       Label(
-                           title: {Text("\(pivotLevel)") },
-                           icon: {Image(systemName: "plus")}
-                       )
-                   }
+                        Button(action: {
+                            pivotLevel = "0"
+                        }, label: {
+                            Text("BV")
+                        })
+                        Button(action: {
+                            pivotLevel = "1"
+                        }, label: {
+                            Text("1")
+                        })
+                        Button(action: {
+                            pivotLevel = "2"
+                        }, label: {
+                            Text("2")
+                        })
+                        Button(action: {
+                            pivotLevel = "3"
+                        }, label: {
+                            Text("3")
+                        })
+                        Button(action: {
+                            pivotLevel = "4"
+                        }, label: {
+                            Text("4")
+                        })
+                        
+                    } label: {
+                        Text("\(pivotLevel)")
+                    }
                     
-                    Menu {
-                       Button(action: {
-                           sNoHoldLevel = "0"
-                       }, label: {
-                           Text("BV")
-                       })
-                       Button(action: {
-                           sNoHoldLevel = "1"
-                       }, label: {
-                           Text("1")
-                       })
-                       Button(action: {
-                           sNoHoldLevel = "2"
-                       }, label: {
-                           Text("2")
-                       })
-                       Button(action: {
-                           sNoHoldLevel = "3"
-                       }, label: {
-                           Text("3")
-                       })
-                       Button(action: {
-                           sNoHoldLevel = "4"
-                       }, label: {
-                           Text("4")
-                       })
-                       
-                   } label: {
-                       Label(
-                           title: {Text("\(sNoHoldLevel)") },
-                           icon: {Image(systemName: "plus")}
-                       )
-                   }
-                    HStack {
+                    HStack (spacing: 14) {
                         Menu {
                             Button(action: {
-                                triangleI = "0"
+                                sNoHoldLevel = "0"
                             }, label: {
                                 Text("BV")
                             })
                             Button(action: {
-                                triangleI = "1"
+                                sNoHoldLevel = "1"
                             }, label: {
                                 Text("1")
                             })
                             Button(action: {
-                                triangleI = "2"
+                                sNoHoldLevel = "2"
                             }, label: {
                                 Text("2")
                             })
                             Button(action: {
-                                triangleI = "3"
+                                sNoHoldLevel = "3"
                             }, label: {
                                 Text("3")
                             })
                             Button(action: {
-                                triangleI = "4"
+                                sNoHoldLevel = "4"
                             }, label: {
                                 Text("4")
                             })
                             
                         } label: {
-                            Label(
-                                title: {Text("\(triangleI)") },
-                                icon: {Image(systemName: "plus")}
-                            )
+                            Text("\(sNoHoldLevel)")
                         }
                         
                         Menu {
                             Button(action: {
-                                trianglePI = "0"
+                                sNoHoldSteps = "0"
+                            }, label: {
+                                Text("BV")
+                            })
+                            
+                        } label: {
+                            Text("\(sNoHoldSteps)")
+                        }
+                    }
+                        
+                    HStack (spacing: 14) {
+                            Menu {
+                                Button(action: {
+                                    triangleI = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    triangleI = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    triangleI = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    triangleI = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    triangleI = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(triangleI)")
+                            }
+                            
+                            Menu {
+                                Button(action: {
+                                    trianglePI = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    trianglePI = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    trianglePI = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    trianglePI = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    trianglePI = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(trianglePI)")
+                            }
+                        }
+                        
+                        Menu {
+                            Button(action: {
+                                twizzlesLevel = "0"
                             }, label: {
                                 Text("BV")
                             })
                             Button(action: {
-                                trianglePI = "1"
+                                twizzlesLevel = "1"
                             }, label: {
                                 Text("1")
                             })
                             Button(action: {
-                                trianglePI = "2"
+                                twizzlesLevel = "2"
                             }, label: {
                                 Text("2")
                             })
                             Button(action: {
-                                trianglePI = "3"
+                                twizzlesLevel = "3"
                             }, label: {
                                 Text("3")
                             })
                             Button(action: {
-                                trianglePI = "4"
+                                twizzlesLevel = "4"
                             }, label: {
                                 Text("4")
                             })
                             
                         } label: {
-                            Label(
-                                title: {Text("\(trianglePI)") },
-                                icon: {Image(systemName: "plus")}
-                            )
+                            Text("\(twizzlesLevel)")
+                        }
+                        
+                        Menu {
+                            Button(action: {
+                                sMovesLevel = "0"
+                            }, label: {
+                                Text("BV")
+                            })
+                            Button(action: {
+                                sMovesLevel = "1"
+                            }, label: {
+                                Text("1")
+                            })
+                            Button(action: {
+                                sMovesLevel = "2"
+                            }, label: {
+                                Text("2")
+                            })
+                            Button(action: {
+                                sMovesLevel = "3"
+                            }, label: {
+                                Text("3")
+                            })
+                            Button(action: {
+                                sMovesLevel = "4"
+                            }, label: {
+                                Text("4")
+                            })
+                            
+                        } label: {
+                            Text("\(sMovesLevel)")
                         }
                     }
                     
-                    Menu {
-                       Button(action: {
-                           twizzlesLevel = "0"
-                       }, label: {
-                           Text("BV")
-                       })
-                       Button(action: {
-                           twizzlesLevel = "1"
-                       }, label: {
-                           Text("1")
-                       })
-                       Button(action: {
-                           twizzlesLevel = "2"
-                       }, label: {
-                           Text("2")
-                       })
-                       Button(action: {
-                           twizzlesLevel = "3"
-                       }, label: {
-                           Text("3")
-                       })
-                       Button(action: {
-                           twizzlesLevel = "4"
-                       }, label: {
-                           Text("4")
-                       })
-                       
-                   } label: {
-                       Label(
-                           title: {Text("\(twizzlesLevel)") },
-                           icon: {Image(systemName: "plus")}
-                       )
-                   }
+                    VStack (spacing: 8) {
+                        TextField("GOE", text: $pivotGOE)
+                            .gOEInput()
+                        TextField("GOE", text: $sNoHoldGOE)
+                            .gOEInput()
+                        TextField("GOE", text: $triangleGOE)
+                            .gOEInput()
+                        TextField("GOE", text: $twizzlesGOE)
+                            .gOEInput()
+                        TextField("GOE", text: $sMovesGOE)
+                            .gOEInput()
+                    }
                     
-                    Menu {
-                       Button(action: {
-                           sMovesLevel = "0"
-                       }, label: {
-                           Text("BV")
-                       })
-                       Button(action: {
-                           sMovesLevel = "1"
-                       }, label: {
-                           Text("1")
-                       })
-                       Button(action: {
-                           sMovesLevel = "2"
-                       }, label: {
-                           Text("2")
-                       })
-                       Button(action: {
-                           sMovesLevel = "3"
-                       }, label: {
-                           Text("3")
-                       })
-                       Button(action: {
-                           sMovesLevel = "4"
-                       }, label: {
-                           Text("4")
-                       })
-                       
-                   } label: {
-                       Label(
-                           title: {Text("\(sMovesLevel)") },
-                           icon: {Image(systemName: "plus")}
-                       )
-                   }
-                    
+                    VStack (spacing: 8) {
+                        Text("\(finalPivotValue)")
+                            .elementResult()
+                        Text("\(finalSNoHoldValue)")
+                            .elementResult()
+                        Text("\(finalTriangleValue)")
+                            .elementResult()
+                        Text("\(finalTwizzlesValue)")
+                            .elementResult()
+                        Text("\(finalsMovesValue)")
+                            .elementResult()
+                        //          Text("\(techScore)")
+                    }
                 }
                 
-                VStack (spacing: 8) {
-                    TextField("GOE", text: $pivotGOE)
-                        .gOEInput()
-                    TextField("GOE", text: $sNoHoldGOE)
-                        .gOEInput()
-                    TextField("GOE", text: $triangleGOE)
-                        .gOEInput()
-                    TextField("GOE", text: $twizzlesGOE)
-                        .gOEInput()
-                    TextField("GOE", text: $sMovesGOE)
-                        .gOEInput()
-                }
+                Spacer()
                 
-                VStack (spacing: 8) {
-                    Text("\(finalPivotValue)")
-                        .elementResult()
-                    Text("\(finalSNoHoldValue)")
-                        .elementResult()
-                    Text("\(finalTriangleValue)")
-                        .elementResult()
-                    Text("\(finalTwizzlesValue)")
-                        .elementResult()
-                    Text("\(finalsMovesValue)")
-                        .elementResult()
-          //          Text("\(techScore)")
-                }
-            }
-            
-                 Spacer()
-            
-            Text("Component Score")
-                .breakdownTitle()
-            
-            HStack (spacing: 20) {
-                VStack (spacing: 18) {
-                    Text("Composition")
-                        .elementTitle()
-                    Text("Presentation")
-                        .elementTitle()
-                    Text("Skating Skills")
-                        .elementTitle()
-                }
-                VStack{
-                    TextField("Score", text: $compScore)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.callout)
-                        .font(.caption)
-                        .frame(maxWidth:65, maxHeight: 40)
-                    TextField("Score", text: $presScore)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.callout)
-                        .font(.caption)
-                        .frame(maxWidth:65, maxHeight: 40)
-                    TextField("Score", text: $ssScore)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.callout)
-                        .font(.caption)
-                        .frame(maxWidth:65, maxHeight: 40)
-                }
-                //                  VStack{
-                //                       Text("Total:")
-                //                       .font(.title3)
-                //                        .foregroundColor(Color("Navy"))
-                //                     Text("\(finalComponentScore)")
-                //                        .elementResult()
-                //                  }
-                //         }
-                
-                Button(action: {
-                    let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                    let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
-                    let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                    let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                    let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
-                    
-                    finalPivotValue = String(format: "%.2f", pivottt)
-                    finalSNoHoldValue = String(format: "%.2f", sNoHolddd)
-                    finalTriangleValue = String(format: "%.2f", triangleee)
-                    finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                    finalsMovesValue = String(format: "%.2f", sMovesss)
-                    let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
-                    finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                    techScore = pivottt + sNoHolddd + triangleee + twizzlesss + sMovesss
-                    finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3)))
-                }){
-                    Text("Calculate")
-                        .font(.caption)
-                        .fontWeight(.thin)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: 60, maxHeight: 25)
-                        .padding(4)
-                }
-                .background(Color.blue)
-                .clipShape(Capsule())
-            }
-            
-            Spacer()
-            
-            HStack{
-                Text("Total Score")
+                Text("Component Score")
                     .breakdownTitle()
                 
-                Text("\(finalTotalScore)")
-                    .elementResult()
-                    .padding()
+                HStack (spacing: 20) {
+                    VStack (spacing: 18) {
+                        Text("Composition")
+                            .elementTitle()
+                        Text("Presentation")
+                            .elementTitle()
+                        Text("Skating Skills")
+                            .elementTitle()
+                    }
+                    VStack{
+                        TextField("Score", text: $compScore)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.callout)
+                            .font(.caption)
+                            .frame(maxWidth:65, maxHeight: 40)
+                        TextField("Score", text: $presScore)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.callout)
+                            .font(.caption)
+                            .frame(maxWidth:65, maxHeight: 40)
+                        TextField("Score", text: $ssScore)
+                            .textFieldStyle(.roundedBorder)
+                            .font(.callout)
+                            .font(.caption)
+                            .frame(maxWidth:65, maxHeight: 40)
+                    }
+                    //                  VStack{
+                    //                       Text("Total:")
+                    //                       .font(.title3)
+                    //                        .foregroundColor(Color("Navy"))
+                    //                     Text("\(finalComponentScore)")
+                    //                        .elementResult()
+                    //                  }
+                    //         }
+                    
+                    Button(action: {
+                        let pivottt = correctPivotLevel (level: "\(pivotLevel)")
+                        let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
+                        let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                        let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                        let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
+                        
+                        finalPivotValue = String(format: "%.2f", pivottt)
+                        finalSNoHoldValue = String(format: "%.2f", sNoHolddd)
+                        finalTriangleValue = String(format: "%.2f", triangleee)
+                        finalTwizzlesValue = String(format: "%.2f", twizzlesss)
+                        finalsMovesValue = String(format: "%.2f", sMovesss)
+                        let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
+                        finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
+                        techScore = pivottt + sNoHolddd + triangleee + twizzlesss + sMovesss
+                        finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3)))
+                    }){
+                        Text("Calculate")
+                            .font(.caption)
+                            .fontWeight(.thin)
+                            .foregroundColor(.black)
+                            .frame(maxWidth: 60, maxHeight: 25)
+                            .padding(4)
+                    }
+                    .background(Color.blue)
+                    .clipShape(Capsule())
+                }
+                
+                Spacer()
+                
+                HStack{
+                    Text("Total Score")
+                        .breakdownTitle()
+                    
+                    Text("\(finalTotalScore)")
+                        .elementResult()
+                        .padding()
+                }
+                
+                Spacer()
+                
             }
-            
-            Spacer()
-            
         }
     }
-}
     
     
     struct ShortProgram_Previews: PreviewProvider {
