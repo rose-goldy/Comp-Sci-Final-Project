@@ -11,6 +11,14 @@
 		8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5AB29B8E39000E360BB /* ContentView.swift */; };
 		8B49F5AE29B8E39100E360BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B49F5AD29B8E39100E360BB /* Assets.xcassets */; };
 		8B49F5B129B8E39100E360BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B49F5B029B8E39100E360BB /* Preview Assets.xcassets */; };
+		8B49F5BC29B8E43600E360BB /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5BB29B8E43600E360BB /* Elements.swift */; };
+		8B49F5BE29B8E44D00E360BB /* ShortPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5BD29B8E44D00E360BB /* ShortPButton.swift */; };
+		8B49F5C029B8E45800E360BB /* LongPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5BF29B8E45800E360BB /* LongPButton.swift */; };
+		8B49F5C229B8E46C00E360BB /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C129B8E46C00E360BB /* FirstView.swift */; };
+		8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C329B8E47B00E360BB /* ShortProgram.swift */; };
+		8B49F5C629B8E48400E360BB /* LongProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C529B8E48400E360BB /* LongProgram.swift */; };
+		8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C729B8E52000E360BB /* Extensions.swift */; };
+		8B9A6A1629BB7BE800330DF5 /* DropDownAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,14 @@
 		8B49F5AB29B8E39000E360BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B49F5AD29B8E39100E360BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B49F5B029B8E39100E360BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B49F5BB29B8E43600E360BB /* Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elements.swift; sourceTree = "<group>"; };
+		8B49F5BD29B8E44D00E360BB /* ShortPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortPButton.swift; sourceTree = "<group>"; };
+		8B49F5BF29B8E45800E360BB /* LongPButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPButton.swift; sourceTree = "<group>"; };
+		8B49F5C129B8E46C00E360BB /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		8B49F5C329B8E47B00E360BB /* ShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortProgram.swift; sourceTree = "<group>"; };
+		8B49F5C529B8E48400E360BB /* LongProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongProgram.swift; sourceTree = "<group>"; };
+		8B49F5C729B8E52000E360BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownAttempt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +69,9 @@
 			children = (
 				8B49F5A929B8E39000E360BB /* AP_AppApp.swift */,
 				8B49F5AB29B8E39000E360BB /* ContentView.swift */,
-				8B49F5AD29B8E39100E360BB /* Assets.xcassets */,
+				8B49F5B729B8E3B400E360BB /* Views */,
+				8B49F5B929B8E3D000E360BB /* Models */,
+				8B49F5B829B8E3BE00E360BB /* Components */,
 				8B49F5AF29B8E39100E360BB /* Preview Content */,
 			);
 			path = "AP App";
@@ -62,9 +80,39 @@
 		8B49F5AF29B8E39100E360BB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				8B49F5AD29B8E39100E360BB /* Assets.xcassets */,
 				8B49F5B029B8E39100E360BB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B49F5B729B8E3B400E360BB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B49F5C129B8E46C00E360BB /* FirstView.swift */,
+				8B49F5C329B8E47B00E360BB /* ShortProgram.swift */,
+				8B49F5C529B8E48400E360BB /* LongProgram.swift */,
+				8B9A6A1529BB7BE700330DF5 /* DropDownAttempt.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B49F5B829B8E3BE00E360BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B49F5BD29B8E44D00E360BB /* ShortPButton.swift */,
+				8B49F5BF29B8E45800E360BB /* LongPButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8B49F5B929B8E3D000E360BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B49F5BB29B8E43600E360BB /* Elements.swift */,
+				8B49F5C729B8E52000E360BB /* Extensions.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +186,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */,
+				8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */,
+				8B9A6A1629BB7BE800330DF5 /* DropDownAttempt.swift in Sources */,
+				8B49F5C229B8E46C00E360BB /* FirstView.swift in Sources */,
+				8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */,
+				8B49F5BE29B8E44D00E360BB /* ShortPButton.swift in Sources */,
+				8B49F5C629B8E48400E360BB /* LongProgram.swift in Sources */,
+				8B49F5C029B8E45800E360BB /* LongPButton.swift in Sources */,
 				8B49F5AA29B8E39000E360BB /* AP_AppApp.swift in Sources */,
+				8B49F5BC29B8E43600E360BB /* Elements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
