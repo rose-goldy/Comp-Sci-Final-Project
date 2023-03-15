@@ -9,22 +9,22 @@ import SwiftUI
 
 struct ShortProgram: View {
     @State var pivotGOE: String = ""
-    @State var sNoHoldGOE: String = ""
+    @State var noHoldGOE: String = ""
     @State var triangleGOE: String = ""
     @State var twizzlesGOE: String = ""
-    @State var sMovesGOE: String = ""
+    @State var movesGOE: String = ""
     @State var finalPivotValue: String = ""
     @State var finalSNoHoldValue: String = ""
     @State var finalTriangleValue: String = ""
     @State var finalTwizzlesValue: String = ""
-    @State var finalsMovesValue: String = ""
+    @State var finalMovesValue: String = ""
     @State var pivotLevel: String = "Level"
-    @State var sNoHoldLevel: String = "Level"
-    @State var sNoHoldSteps: String = "Steps"
+    @State var noHoldLevel: String = "Level"
+    @State var noHoldSteps: String = "Steps"
     @State var triangleI: String = "I"
     @State var trianglePI: String = "PI"
     @State var twizzlesLevel: String = "Level"
-    @State var sMovesLevel: String = "Level"
+    @State var movesLevel: String = "Level"
     @State var compScore: String = ""
     @State var presScore: String = ""
     @State var ssScore: String = ""
@@ -53,22 +53,82 @@ struct ShortProgram: View {
         }
     }
     
-    func correctSNoHoldLevel (level: String) -> Double {
-        if (level) == "0" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level00) + shortNoHold.level00
-            return sNoHoldValue
-        } else if (level) == "1" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level01) + shortNoHold.level01
-            return sNoHoldValue
-        } else if (level) == "2" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level02) + shortNoHold.level02
-            return sNoHoldValue
-        } else if (level) == "3" {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level03) + shortNoHold.level03
-            return sNoHoldValue
+    func correctNoHoldLevel (level: String, steps: String) -> Double {
+        if level == "0" && steps == "0" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level00) + noHold.level00
+            return noHoldValue
+        } else if level == "0" && steps == "1" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level01) + noHold.level01
+            return noHoldValue
+        } else if level == "0" && steps == "2" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level02) + noHold.level02
+            return noHoldValue
+        } else if level == "0" && steps == "3" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level03) + noHold.level03
+            return noHoldValue
+        } else if level == "0" && steps == "4" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level04) + noHold.level04
+            return noHoldValue
+        } else if level == "1" && steps == "0" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level10) + noHold.level10
+            return noHoldValue
+        } else if level == "1" && steps == "1" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level11) + noHold.level11
+            return noHoldValue
+        } else if level == "1" && steps == "2" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level12) + noHold.level12
+            return noHoldValue
+        } else if level == "1" && steps == "3" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level13) + noHold.level13
+            return noHoldValue
+        } else if level == "1" && steps == "4" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level14) + noHold.level14
+            return noHoldValue
+        } else if level == "2" && steps == "0" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level20) + noHold.level20
+            return noHoldValue
+        } else if level == "2" && steps == "1" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level21) + noHold.level21
+            return noHoldValue
+        } else if level == "2" && steps == "2" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level22) + noHold.level22
+            return noHoldValue
+        } else if level == "2" && steps == "3" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level23) + noHold.level23
+            return noHoldValue
+        } else if level == "2" && steps == "4" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level24) + noHold.level24
+            return noHoldValue
+        } else if level == "3" && steps == "0" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level30) + noHold.level30
+            return noHoldValue
+        } else if level == "3" && steps == "1" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level31) + noHold.level31
+            return noHoldValue
+        } else if level == "3" && steps == "2" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level32) + noHold.level32
+            return noHoldValue
+        } else if level == "3" && steps == "3" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level33) + noHold.level33
+            return noHoldValue
+        } else if level == "3" && steps == "4" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level34) + noHold.level34
+            return noHoldValue
+        } else if level == "4" && steps == "0" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level40) + noHold.level40
+            return noHoldValue
+        } else if level == "4" && steps == "1" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level41) + noHold.level41
+            return noHoldValue
+        } else if level == "4" && steps == "2" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level42) + noHold.level42
+            return noHoldValue
+        } else if level == "4" && steps == "3" {
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level43) + noHold.level43
+            return noHoldValue
         } else {
-            let sNoHoldValue = (Double(sNoHoldGOE)! * 0.1 * shortNoHold.level04) + shortNoHold.level04
-            return sNoHoldValue
+            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level44) + noHold.level44
+            return noHoldValue
         }
     }
     
@@ -172,20 +232,20 @@ struct ShortProgram: View {
     
     func correctSMovesLevel (level: String) -> Double {
         if (level) == "0" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level00) + shortMoves.level00
-            return sMovesValue
+            let movesValue = (Double(movesGOE)! * 0.1 * moves.level00) + moves.level00
+            return movesValue
         } else if (level) == "1" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level01) + shortMoves.level01
-            return sMovesValue
+            let movesValue = (Double(movesGOE)! * 0.1 * moves.level01) + moves.level01
+            return movesValue
         } else if (level) == "2" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level02) + shortMoves.level02
-            return sMovesValue
+            let movesValue = (Double(movesGOE)! * 0.1 * moves.level02) + moves.level02
+            return movesValue
         } else if (level) == "3" {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level03) + shortMoves.level03
-            return sMovesValue
+            let movesValue = (Double(movesGOE)! * 0.1 * moves.level03) + moves.level03
+            return movesValue
         } else {
-            let sMovesValue = (Double(sMovesGOE)! * 0.1 * shortMoves.level04) + shortMoves.level04
-            return sMovesValue
+            let movesValue = (Double(movesGOE)! * 0.1 * moves.level04) + moves.level04
+            return movesValue
         }
     }
     
@@ -242,44 +302,44 @@ struct ShortProgram: View {
                     HStack (spacing: 8) {
                         Menu {
                             Button(action: {
-                                sNoHoldLevel = "0"
+                                noHoldLevel = "0"
                             }, label: {
                                 Text("BV")
                             })
                             Button(action: {
-                                sNoHoldLevel = "1"
+                                noHoldLevel = "1"
                             }, label: {
                                 Text("1")
                             })
                             Button(action: {
-                                sNoHoldLevel = "2"
+                                noHoldLevel = "2"
                             }, label: {
                                 Text("2")
                             })
                             Button(action: {
-                                sNoHoldLevel = "3"
+                                noHoldLevel = "3"
                             }, label: {
                                 Text("3")
                             })
                             Button(action: {
-                                sNoHoldLevel = "4"
+                                noHoldLevel = "4"
                             }, label: {
                                 Text("4")
                             })
                             
                         } label: {
-                            Text("\(sNoHoldLevel)")
+                            Text("\(noHoldLevel)")
                         }
                         
                         Menu {
                             Button(action: {
-                                sNoHoldSteps = "0"
+                                noHoldSteps = "0"
                             }, label: {
                                 Text("BV")
                             })
                             
                         } label: {
-                            Text("\(sNoHoldSteps)")
+                            Text("\(noHoldSteps)")
                         }
                     }
                         
@@ -380,46 +440,46 @@ struct ShortProgram: View {
                         
                         Menu {
                             Button(action: {
-                                sMovesLevel = "0"
+                                movesLevel = "0"
                             }, label: {
                                 Text("BV")
                             })
                             Button(action: {
-                                sMovesLevel = "1"
+                                movesLevel = "1"
                             }, label: {
                                 Text("1")
                             })
                             Button(action: {
-                                sMovesLevel = "2"
+                                movesLevel = "2"
                             }, label: {
                                 Text("2")
                             })
                             Button(action: {
-                                sMovesLevel = "3"
+                                movesLevel = "3"
                             }, label: {
                                 Text("3")
                             })
                             Button(action: {
-                                sMovesLevel = "4"
+                                movesLevel = "4"
                             }, label: {
                                 Text("4")
                             })
                             
                         } label: {
-                            Text("\(sMovesLevel)")
+                            Text("\(movesLevel)")
                         }
                     }
                     
                     VStack (spacing: 8) {
                         TextField("GOE", text: $pivotGOE)
                             .gOEInput()
-                        TextField("GOE", text: $sNoHoldGOE)
+                        TextField("GOE", text: $noHoldGOE)
                             .gOEInput()
                         TextField("GOE", text: $triangleGOE)
                             .gOEInput()
                         TextField("GOE", text: $twizzlesGOE)
                             .gOEInput()
-                        TextField("GOE", text: $sMovesGOE)
+                        TextField("GOE", text: $movesGOE)
                             .gOEInput()
                     }
                     
@@ -432,7 +492,7 @@ struct ShortProgram: View {
                             .elementResult()
                         Text("\(finalTwizzlesValue)")
                             .elementResult()
-                        Text("\(finalsMovesValue)")
+                        Text("\(finalMovesValue)")
                             .elementResult()
                         //          Text("\(techScore)")
                     }
@@ -501,31 +561,30 @@ struct ShortProgram: View {
                         .breakdownTitle()
                     
                     Text("\(finalTotalScore)")
-                    .frame(maxWidth: 70, maxHeight: 34)
+                        .frame(maxWidth: 70, maxHeight: 34)
                         .foregroundColor(.white)
                         .background(.blue)
-                        .padding(5)
-                        .cornerRadius(30)
+                        .cornerRadius(6)
                         .padding(26)
                 }
                 
             Button(action: {
                 let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
+                let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
                 let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
                 let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
+                let movesss = correctSMovesLevel(level: "\(movesLevel)")
                 
                 deductionScore = Double(deductions)!
                 
                 finalPivotValue = String(format: "%.2f", pivottt)
-                finalSNoHoldValue = String(format: "%.2f", sNoHolddd)
+                finalSNoHoldValue = String(format: "%.2f", noHolddd)
                 finalTriangleValue = String(format: "%.2f", triangleee)
                 finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                finalsMovesValue = String(format: "%.2f", sMovesss)
+                finalMovesValue = String(format: "%.2f", movesss)
                 let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
                 finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                techScore = pivottt + sNoHolddd + triangleee + twizzlesss + sMovesss
+                techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
                 finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
             }){
                 Text("Calculate")

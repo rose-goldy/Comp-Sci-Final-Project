@@ -53,3 +53,13 @@ extension Text {
             .cornerRadius(30)
     }
 }
+
+extension Text {
+    func longElementResult() -> some View {
+        self.frame(maxWidth: 50, maxHeight: 40)
+            .foregroundColor(.white)
+            .background(.blue)
+            .cornerRadius(6)
+    }
+}
+
