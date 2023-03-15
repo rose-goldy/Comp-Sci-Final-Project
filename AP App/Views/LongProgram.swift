@@ -401,9 +401,9 @@ struct LongProgram: View {
                             Text("4")
                         })
                             
-                        } label: {
-                            Text("\(lineLevel)")
-                        }
+                    } label: {
+                        Text("\(lineLevel)")
+                    }
                         
                     Menu {
                         Button(action: {
