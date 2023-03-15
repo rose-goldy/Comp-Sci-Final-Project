@@ -46,7 +46,7 @@ extension TextField {
 
 extension Text {
     func elementResult() -> some View {
-        self.frame(maxWidth: 60, maxHeight: 28)
+        self.frame(maxWidth: 50, maxHeight: 28.1)
             .foregroundColor(.white)
             .background(.blue)
             .padding(5)

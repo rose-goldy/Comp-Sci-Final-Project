@@ -198,7 +198,7 @@ struct ShortProgram: View {
                 .breakdownTitle()
                 .padding()
             
-            HStack (spacing: 10) {
+            HStack (spacing: 6) {
                 VStack (spacing: 23) {
                     ForEach(0...shortElements.count-1, id: \.self) {index in
                         Text(shortElements[index].text)
@@ -239,7 +239,7 @@ struct ShortProgram: View {
                         Text("\(pivotLevel)")
                     }
                     
-                    HStack (spacing: 14) {
+                    HStack (spacing: 8) {
                         Menu {
                             Button(action: {
                                 sNoHoldLevel = "0"
@@ -423,7 +423,7 @@ struct ShortProgram: View {
                             .gOEInput()
                     }
                     
-                    VStack (spacing: 8) {
+                VStack {
                         Text("\(finalPivotValue)")
                             .elementResult()
                         Text("\(finalSNoHoldValue)")
@@ -444,7 +444,7 @@ struct ShortProgram: View {
                     .breakdownTitle()
                 
                 HStack (spacing: 20) {
-                    VStack (spacing: 18) {
+                    VStack (spacing: 28) {
                         Text("Composition")
                             .elementTitle()
                         Text("Presentation")
@@ -485,9 +485,10 @@ struct ShortProgram: View {
             
             HStack (spacing: 18) {
                 Text("Deductions")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("Navy"))
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .multilineTextAlignment(.leading)
+                
                 TextField("Points", text: $deductions)
                     .textFieldStyle(.roundedBorder)
                     .font(.callout)
@@ -500,7 +501,11 @@ struct ShortProgram: View {
                         .breakdownTitle()
                     
                     Text("\(finalTotalScore)")
-                        .elementResult()
+                    .frame(maxWidth: 70, maxHeight: 34)
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .padding(5)
+                        .cornerRadius(30)
                         .padding(26)
                 }
                 
@@ -525,8 +530,8 @@ struct ShortProgram: View {
             }){
                 Text("Calculate")
                     .font(.title3)
-                    .fontWeight(.thin)
-                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
                     .frame(maxWidth: 110, maxHeight: 30)
                     .padding(4)
             }
