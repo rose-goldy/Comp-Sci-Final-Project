@@ -31,6 +31,8 @@ struct ShortProgram: View {
     @State var finalComponentScore: String = ""
     @State var finalTotalScore: String = ""
     @State var techScore: Double = 0.0
+    @State var deductions: String = ""
+    @State var deductionScore: Double = 0.0
     
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
@@ -476,45 +478,61 @@ struct ShortProgram: View {
                     //                  }
                     //         }
                     
-                    Button(action: {
-                        let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                        let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
-                        let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                        let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                        let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
-                        
-                        finalPivotValue = String(format: "%.2f", pivottt)
-                        finalSNoHoldValue = String(format: "%.2f", sNoHolddd)
-                        finalTriangleValue = String(format: "%.2f", triangleee)
-                        finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                        finalsMovesValue = String(format: "%.2f", sMovesss)
-                        let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
-                        finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                        techScore = pivottt + sNoHolddd + triangleee + twizzlesss + sMovesss
-                        finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3)))
-                    }){
-                        Text("Calculate")
-                            .font(.caption)
-                            .fontWeight(.thin)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: 60, maxHeight: 25)
-                            .padding(4)
-                    }
-                    .background(Color.blue)
-                    .clipShape(Capsule())
+                    
                 }
                 
-                Spacer()
+            Spacer()
+            
+            HStack (spacing: 18) {
+                Text("Deductions")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color("Navy"))
+                TextField("Points", text: $deductions)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.callout)
+                    .font(.caption)
+                    .frame(maxWidth:65, maxHeight: 40)
+            }
                 
-                HStack{
+            HStack {
                     Text("Total Score")
                         .breakdownTitle()
                     
                     Text("\(finalTotalScore)")
                         .elementResult()
-                        .padding()
+                        .padding(26)
                 }
                 
+            Button(action: {
+                let pivottt = correctPivotLevel (level: "\(pivotLevel)")
+                let sNoHolddd = correctSNoHoldLevel(level: "\(sNoHoldLevel)")
+                let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                let sMovesss = correctSMovesLevel(level: "\(sMovesLevel)")
+                
+                deductionScore = Double(deductions)!
+                
+                finalPivotValue = String(format: "%.2f", pivottt)
+                finalSNoHoldValue = String(format: "%.2f", sNoHolddd)
+                finalTriangleValue = String(format: "%.2f", triangleee)
+                finalTwizzlesValue = String(format: "%.2f", twizzlesss)
+                finalsMovesValue = String(format: "%.2f", sMovesss)
+                let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
+                finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
+                techScore = pivottt + sNoHolddd + triangleee + twizzlesss + sMovesss
+                finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
+            }){
+                Text("Calculate")
+                    .font(.title3)
+                    .fontWeight(.thin)
+                    .foregroundColor(.black)
+                    .frame(maxWidth: 110, maxHeight: 30)
+                    .padding(4)
+            }
+            .background(Color.blue)
+            .clipShape(Capsule())
+            
                 Spacer()
                 
             }
