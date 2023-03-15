@@ -788,7 +788,7 @@ struct LongProgram: View {
                 Text("\(finalTotalScore)")
                     .frame(maxWidth: 70, maxHeight: 40)
                     .foregroundColor(.white)
-                    .background(.blue)
+                    .background(Color("Navy"))
                     .cornerRadius(6)
                     .padding(26)
             }
@@ -826,7 +826,7 @@ struct LongProgram: View {
                     .frame(maxWidth: 110, maxHeight: 30)
                     .padding(4)
             }
-            .background(Color.blue)
+            .background(Color("Navy"))
             .clipShape(Capsule())
             
         }

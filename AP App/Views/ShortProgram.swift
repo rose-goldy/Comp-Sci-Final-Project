@@ -483,7 +483,7 @@ struct ShortProgram: View {
                             .gOEInput()
                     }
                     
-                VStack {
+                VStack (spacing: 19.5) {
                         Text("\(finalPivotValue)")
                             .elementResult()
                         Text("\(finalSNoHoldValue)")
@@ -563,7 +563,7 @@ struct ShortProgram: View {
                     Text("\(finalTotalScore)")
                         .frame(maxWidth: 70, maxHeight: 34)
                         .foregroundColor(.white)
-                        .background(.blue)
+                        .background(Color("Navy"))
                         .cornerRadius(6)
                         .padding(26)
                 }
@@ -594,7 +594,7 @@ struct ShortProgram: View {
                     .frame(maxWidth: 110, maxHeight: 30)
                     .padding(4)
             }
-            .background(Color.blue)
+            .background(Color("Navy"))
             .clipShape(Capsule())
             
                 Spacer()

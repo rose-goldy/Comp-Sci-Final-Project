@@ -46,11 +46,10 @@ extension TextField {
 
 extension Text {
     func elementResult() -> some View {
-        self.frame(maxWidth: 50, maxHeight: 28.1)
+        self.frame(maxWidth: 50, maxHeight: 28.5)
             .foregroundColor(.white)
-            .background(.blue)
-            .padding(5)
-            .cornerRadius(30)
+            .background(Color("Navy"))
+            .cornerRadius(6)
     }
 }
 
@@ -58,7 +57,7 @@ extension Text {
     func longElementResult() -> some View {
         self.frame(maxWidth: 50, maxHeight: 40)
             .foregroundColor(.white)
-            .background(.blue)
+            .background(Color("Navy"))
             .cornerRadius(6)
     }
 }
