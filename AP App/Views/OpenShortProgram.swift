@@ -7,714 +7,372 @@
 
 import SwiftUI
 
-struct OpenShortProgram: View {
-    @State var pivotGOE: String = ""
-    @State var noHoldGOE: String = ""
-    @State var triangleGOE: String = ""
-    @State var twizzlesGOE: String = ""
-    @State var movesGOE: String = ""
-    @State var finalPivotValue: String = ""
-    @State var finalSNoHoldValue: String = ""
-    @State var finalTriangleValue: String = ""
-    @State var finalTwizzlesValue: String = ""
-    @State var finalMovesValue: String = ""
-    @State var pivotLevel: String = "Level"
-    @State var noHoldLevel: String = "Level"
-    @State var noHoldSteps: String = "Steps"
-    @State var triangleI: String = "I"
-    @State var trianglePI: String = "PI"
-    @State var twizzlesLevel: String = "Level"
-    @State var movesLevel: String = "Level"
-    @State var compScore: String = ""
-    @State var presScore: String = ""
-    @State var ssScore: String = ""
-    @State var finalComponentScore: String = ""
-    @State var finalTotalScore: String = ""
-    @State var techScore: Double = 0.0
-    @State var deductions: String = ""
-    @State var deductionScore: Double = 0.0
-    @State var firstElement: String = "Element 1"
-    
-    func correctPivotLevel (level: String) -> Double {
-        if (level) == "0" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00
-            return pivotValue
-        } else if (level) == "1" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level01) + pivotBlock.level01
-            return pivotValue
-        } else if (level) == "2" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level02) + pivotBlock.level02
-            return pivotValue
-        } else if (level) == "3" {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level03) + pivotBlock.level03
-            return pivotValue
-        } else {
-            let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level04) + pivotBlock.level04
-            return pivotValue
-        }
-    }
-    
-    func correctNoHoldLevel (level: String, steps: String) -> Double {
-        if level == "0" && steps == "0" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level00) + noHold.level00
-            return noHoldValue
-        } else if level == "0" && steps == "1" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level01) + noHold.level01
-            return noHoldValue
-        } else if level == "0" && steps == "2" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level02) + noHold.level02
-            return noHoldValue
-        } else if level == "0" && steps == "3" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level03) + noHold.level03
-            return noHoldValue
-        } else if level == "0" && steps == "4" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level04) + noHold.level04
-            return noHoldValue
-        } else if level == "1" && steps == "0" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level10) + noHold.level10
-            return noHoldValue
-        } else if level == "1" && steps == "1" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level11) + noHold.level11
-            return noHoldValue
-        } else if level == "1" && steps == "2" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level12) + noHold.level12
-            return noHoldValue
-        } else if level == "1" && steps == "3" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level13) + noHold.level13
-            return noHoldValue
-        } else if level == "1" && steps == "4" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level14) + noHold.level14
-            return noHoldValue
-        } else if level == "2" && steps == "0" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level20) + noHold.level20
-            return noHoldValue
-        } else if level == "2" && steps == "1" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level21) + noHold.level21
-            return noHoldValue
-        } else if level == "2" && steps == "2" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level22) + noHold.level22
-            return noHoldValue
-        } else if level == "2" && steps == "3" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level23) + noHold.level23
-            return noHoldValue
-        } else if level == "2" && steps == "4" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level24) + noHold.level24
-            return noHoldValue
-        } else if level == "3" && steps == "0" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level30) + noHold.level30
-            return noHoldValue
-        } else if level == "3" && steps == "1" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level31) + noHold.level31
-            return noHoldValue
-        } else if level == "3" && steps == "2" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level32) + noHold.level32
-            return noHoldValue
-        } else if level == "3" && steps == "3" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level33) + noHold.level33
-            return noHoldValue
-        } else if level == "3" && steps == "4" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level34) + noHold.level34
-            return noHoldValue
-        } else if level == "4" && steps == "0" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level40) + noHold.level40
-            return noHoldValue
-        } else if level == "4" && steps == "1" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level41) + noHold.level41
-            return noHoldValue
-        } else if level == "4" && steps == "2" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level42) + noHold.level42
-            return noHoldValue
-        } else if level == "4" && steps == "3" {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level43) + noHold.level43
-            return noHoldValue
-        } else {
-            let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level44) + noHold.level44
-            return noHoldValue
-        }
-    }
-    
-    func correctTriangleLevel (I: String, PI: String) -> Double {
-        if I == "0" && PI == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level00) + triangle.level00
-            return triangleValue
-        } else if I == "0" && PI == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level01) + triangle.level01
-            return triangleValue
-        } else if I == "0" && PI == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level02) + triangle.level02
-            return triangleValue
-        } else if I == "0" && PI == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level03) + triangle.level03
-            return triangleValue
-        } else if I == "0" && PI == "4" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level04) + triangle.level04
-            return triangleValue
-        } else if I == "1" && PI == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level10) + triangle.level10
-            return triangleValue
-        } else if I == "1" && PI == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level11) + triangle.level11
-            return triangleValue
-        } else if I == "1" && PI == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level12) + triangle.level12
-            return triangleValue
-        } else if I == "1" && PI == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level13) + triangle.level13
-            return triangleValue
-        } else if I == "1" && PI == "4" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level14) + triangle.level14
-            return triangleValue
-        } else if I == "2" && PI == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level20) + triangle.level20
-            return triangleValue
-        } else if I == "2" && PI == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level21) + triangle.level21
-            return triangleValue
-        } else if I == "2" && PI == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level22) + triangle.level22
-            return triangleValue
-        } else if I == "2" && PI == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level23) + triangle.level23
-            return triangleValue
-        } else if I == "2" && PI == "4" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level24) + triangle.level24
-            return triangleValue
-        } else if I == "3" && PI == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level30) + triangle.level30
-            return triangleValue
-        } else if I == "3" && PI == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level31) + triangle.level31
-            return triangleValue
-        } else if I == "3" && PI == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level32) + triangle.level32
-            return triangleValue
-        } else if I == "3" && PI == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level33) + triangle.level33
-            return triangleValue
-        } else if I == "3" && PI == "4" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level34) + triangle.level34
-            return triangleValue
-        } else if I == "4" && PI == "0" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level40) + triangle.level40
-            return triangleValue
-        } else if I == "4" && PI == "1" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level41) + triangle.level41
-            return triangleValue
-        } else if I == "4" && PI == "2" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level42) + triangle.level42
-            return triangleValue
-        } else if I == "4" && PI == "3" {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level43) + triangle.level43
-            return triangleValue
-        } else {
-            let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level44) + triangle.level44
-            return triangleValue
-        }
-    }
-    
-    func correctTwizzlesLevel (level: String) -> Double {
-        if (level) == "0" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level00) + twizzles.level00
-            return twizzlesValue
-        } else if (level) == "1" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level01) + twizzles.level01
-            return twizzlesValue
-        } else if (level) == "2" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level02) + twizzles.level02
-            return twizzlesValue
-        } else if (level) == "3" {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level03) + twizzles.level03
-            return twizzlesValue
-        } else {
-            let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level04) + twizzles.level04
-            return twizzlesValue
-        }
-    }
-    
-    func correctSMovesLevel (level: String) -> Double {
-        if (level) == "0" {
-            let movesValue = (Double(movesGOE)! * 0.1 * moves.level00) + moves.level00
-            return movesValue
-        } else if (level) == "1" {
-            let movesValue = (Double(movesGOE)! * 0.1 * moves.level01) + moves.level01
-            return movesValue
-        } else if (level) == "2" {
-            let movesValue = (Double(movesGOE)! * 0.1 * moves.level02) + moves.level02
-            return movesValue
-        } else if (level) == "3" {
-            let movesValue = (Double(movesGOE)! * 0.1 * moves.level03) + moves.level03
-            return movesValue
-        } else {
-            let movesValue = (Double(movesGOE)! * 0.1 * moves.level04) + moves.level04
-            return movesValue
-        }
-    }
-    
-    var body: some View {
-        VStack (spacing: 2) {
-            
-            //       Spacer()
-            
-            Text("Technical Score")
-                .breakdownTitle()
-                .padding()
-            
-            HStack (spacing: 6) {
-                VStack (spacing: 23) {
-                    ForEach(0...shortElements.count-1, id: \.self) {index in
-                        Text(shortElements[index].text)
-                            .elementTitle()
-                    }
+//class OpenShortProgram: ObservableObject {
+    struct OpenShortProgram: View {
+        @EnvironmentObject var functions = Functions
+        
+        @State var pivotGOE: String = ""
+        @State var noHoldGOE: String = ""
+        @State var triangleGOE: String = ""
+        @State var twizzlesGOE: String = ""
+        @State var movesGOE: String = ""
+        @State var finalPivotValue: String = ""
+        @State var finalNoHoldValue: String = ""
+        @State var finalTriangleValue: String = ""
+        @State var finalTwizzlesValue: String = ""
+        @State var finalMovesValue: String = ""
+        @State var pivotLevel: String = "Level"
+        @State var noHoldLevel: String = "Level"
+        @State var noHoldSteps: String = "Steps"
+        @State var triangleI: String = "I"
+        @State var trianglePI: String = "PI"
+        @State var twizzlesLevel: String = "Level"
+        @State var movesLevel: String = "Level"
+        @State var compScore: String = ""
+        @State var presScore: String = ""
+        @State var ssScore: String = ""
+        @State var finalComponentScore: String = ""
+        @State var finalTotalScore: String = ""
+        @State var techScore: Double = 0.0
+        @State var deductions: String = ""
+        @State var deductionScore: Double = 0.0
+        @State var firstElement: String = "Element 1"
+        @State var secondElement: String = "Element 2"
+        @State var thirdElement: String = "Element 3"
+        @State var fourthElement: String = "Element 4"
+        @State var fifthElement: String = "Element 5"
+        
+        
+        //   var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
+        //  var shortElements: [String] = ["\(firstElement)", "\(secondElement)", "\(thirdElement)", "\(fourthElement)", "\(fifthElement)"]
+        
+        var body: some View {
+            VStack (spacing: 2) {
+                
+                //       Spacer()
+                
+       //         var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
+                
+        //        VStack (spacing: 23) {
+//                    ForEach(0...shortElements.count-1, id: \.self) {index in
+//                        if index == "Pivot Block" {
+//                            HStack{
+//                                Menu {
+//                                    Button(action: {
+//                                        pivotLevel = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        pivotLevel = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        pivotLevel = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        pivotLevel = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        pivotLevel = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(pivotLevel)")
+//                                }
+//
+//                                TextField("GOE", text: $pivotGOE)
+//                                    .gOEInput()
+//
+//                                Text("\(finalPivotValue)")
+//                                    .elementResult()
+//
+//                            }
+//                        } else if index == "No Hold" {
+//                            HStack (spacing: 8) {
+//                                Menu {
+//                                    Button(action: {
+//                                        noHoldLevel = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        noHoldLevel = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        noHoldLevel = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        noHoldLevel = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        noHoldLevel = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(noHoldLevel)")
+//                                }
+//
+//                                Menu {
+//                                    Button(action: {
+//                                        noHoldSteps = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(noHoldSteps)")
+//                                }
+//
+//                                TextField("GOE", text: $noHoldGOE)
+//                                    .gOEInput()
+//
+//                                Text("\(finalNoHoldValue)")
+//                                    .elementResult()
+//
+//                            }
+//                        } else if index == "Triangle Intersection" {
+//                            HStack (spacing: 14) {
+//                                Menu {
+//                                    Button(action: {
+//                                        triangleI = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        triangleI = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        triangleI = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        triangleI = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        triangleI = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(triangleI)")
+//                                }
+//
+//                                Menu {
+//                                    Button(action: {
+//                                        trianglePI = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        trianglePI = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        trianglePI = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        trianglePI = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        trianglePI = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(trianglePI)")
+//                                }
+//
+//                                TextField("GOE", text: $triangleGOE)
+//                                    .gOEInput()
+//
+//                                Text("\(finalTriangleValue)")
+//                                    .elementResult()
+//
+//                            }
+//                        } else if index == "Twizzles" {
+//                            HStack{
+//                                Menu {
+//                                    Button(action: {
+//                                        twizzlesLevel = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        twizzlesLevel = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        twizzlesLevel = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        twizzlesLevel = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        twizzlesLevel = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(twizzlesLevel)")
+//                                }
+//
+//                                TextField("GOE", text: $twizzlesGOE)
+//                                    .gOEInput()
+//
+//                                Text("\(finalTwizzlesValue)")
+//                                    .elementResult()
+//
+//                            }
+//                        } else {
+//                            HStack{
+//                                Menu {
+//                                    Button(action: {
+//                                        movesLevel = "0"
+//                                    }, label: {
+//                                        Text("BV")
+//                                    })
+//                                    Button(action: {
+//                                        movesLevel = "1"
+//                                    }, label: {
+//                                        Text("1")
+//                                    })
+//                                    Button(action: {
+//                                        movesLevel = "2"
+//                                    }, label: {
+//                                        Text("2")
+//                                    })
+//                                    Button(action: {
+//                                        movesLevel = "3"
+//                                    }, label: {
+//                                        Text("3")
+//                                    })
+//                                    Button(action: {
+//                                        movesLevel = "4"
+//                                    }, label: {
+//                                        Text("4")
+//                                    })
+//
+//                                } label: {
+//                                    Text("\(movesLevel)")
+//                                }
+//
+//                                TextField("GOE", text: $movesGOE)
+//                                    .gOEInput()
+//
+//                                Text("\(finalMovesValue)")
+//                                    .elementResult()
+//                            }
+//                        }
+//                    }
                     
-                }
-                VStack (spacing: 22) {
-                    
+       //         }
+                
+                Text("Technical Score")
+                    .breakdownTitle()
+                    .padding()
+                
+                HStack{
                     Menu {
                         Button(action: {
-                            pivotLevel = "0"
+                            firstElement = "Pivot Block"
                         }, label: {
-                            Text("BV")
+                            Text("Pivot Block")
                         })
                         Button(action: {
-                            pivotLevel = "1"
+                            firstElement = "No Hold"
                         }, label: {
-                            Text("1")
+                            Text("No Hold")
                         })
                         Button(action: {
-                            pivotLevel = "2"
+                            firstElement = "Triangle Intersection"
                         }, label: {
-                            Text("2")
+                            Text("Triangle Intersection")
                         })
                         Button(action: {
-                            pivotLevel = "3"
+                            firstElement = "Twizzles"
                         }, label: {
-                            Text("3")
+                            Text("Twizzles")
                         })
                         Button(action: {
-                            pivotLevel = "4"
+                            firstElement = "Moves"
                         }, label: {
-                            Text("4")
+                            Text("Moves")
                         })
                         
                     } label: {
-                        Text("\(pivotLevel)")
+                        Text("\(firstElement)")
+                            .padding()
                     }
                     
-                    HStack (spacing: 8) {
-                        Menu {
-                            Button(action: {
-                                noHoldLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                noHoldLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                noHoldLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                noHoldLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                noHoldLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(noHoldLevel)")
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                noHoldSteps = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            
-                        } label: {
-                            Text("\(noHoldSteps)")
-                        }
-                    }
-                        
-                    HStack (spacing: 14) {
-                            Menu {
-                                Button(action: {
-                                    triangleI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    triangleI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    triangleI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    triangleI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    triangleI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(triangleI)")
-                            }
-                            
-                            Menu {
-                                Button(action: {
-                                    trianglePI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    trianglePI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    trianglePI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    trianglePI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    trianglePI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(trianglePI)")
-                            }
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                twizzlesLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(twizzlesLevel)")
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                movesLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                movesLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                movesLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                movesLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                movesLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(movesLevel)")
-                        }
-                    }
-                    
-                    VStack (spacing: 8) {
-                        TextField("GOE", text: $pivotGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $noHoldGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $triangleGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $twizzlesGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $movesGOE)
-                            .gOEInput()
-                    }
-                    
-                VStack (spacing: 19.5) {
-                        Text("\(finalPivotValue)")
-                            .elementResult()
-                        Text("\(finalSNoHoldValue)")
-                            .elementResult()
-                        Text("\(finalTriangleValue)")
-                            .elementResult()
-                        Text("\(finalTwizzlesValue)")
-                            .elementResult()
-                        Text("\(finalMovesValue)")
-                            .elementResult()
-                        //          Text("\(techScore)")
-                    }
-                }
-            
-            HStack{
-                Menu {
-                    Button(action: {
-                        firstElement = "Pivot Block"
-                    }, label: {
-                        Text("Pivot Block")
-                    })
-                    Button(action: {
-                        firstElement = "No Hold"
-                    }, label: {
-                        Text("No Hold")
-                    })
-                    Button(action: {
-                        firstElement = "Triangle Intersection"
-                    }, label: {
-                        Text("Triangle Intersection")
-                    })
-                    Button(action: {
-                        firstElement = "Twizzles"
-                    }, label: {
-                        Text("Twizzles")
-                    })
-                    Button(action: {
-                        firstElement = "Moves"
-                    }, label: {
-                        Text("Moves")
-                    })
-                    
-                } label: {
-                    Text("\(firstElement)")
-                        .padding()
                 }
                 
-                if firstElement == "Pivot Block" {
+                HStack{
                     Menu {
                         Button(action: {
-                            pivotLevel = "0"
+                            secondElement = "Pivot Block"
                         }, label: {
-                            Text("BV")
+                            Text("Pivot Block")
                         })
                         Button(action: {
-                            pivotLevel = "1"
+                            secondElement = "No Hold"
                         }, label: {
-                            Text("1")
+                            Text("No Hold")
                         })
                         Button(action: {
-                            pivotLevel = "2"
+                            secondElement = "Triangle Intersection"
                         }, label: {
-                            Text("2")
+                            Text("Triangle Intersection")
                         })
                         Button(action: {
-                            pivotLevel = "3"
+                            secondElement = "Twizzles"
                         }, label: {
-                            Text("3")
+                            Text("Twizzles")
                         })
                         Button(action: {
-                            pivotLevel = "4"
+                            secondElement = "Moves"
                         }, label: {
-                            Text("4")
+                            Text("Moves")
                         })
                         
                     } label: {
-                        Text("\(pivotLevel)")
-                    }
-                } else if firstElement == "No Hold" {
-                    HStack (spacing: 8) {
-                        Menu {
-                            Button(action: {
-                                noHoldLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                noHoldLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                noHoldLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                noHoldLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                noHoldLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(noHoldLevel)")
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                noHoldSteps = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            
-                        } label: {
-                            Text("\(noHoldSteps)")
-                        }
-                    }
-                } else if firstElement == "Triangle Intersection" {
-                    HStack (spacing: 14) {
-                            Menu {
-                                Button(action: {
-                                    triangleI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    triangleI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    triangleI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    triangleI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    triangleI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(triangleI)")
-                            }
-                            
-                            Menu {
-                                Button(action: {
-                                    trianglePI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    trianglePI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    trianglePI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    trianglePI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    trianglePI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(trianglePI)")
-                            }
-                        
-                        TextField("GOE", text: $triangleGOE)
-                            .gOEInput()
-                        
-                        Text("\(finalTriangleValue)")
-                            .elementResult()
-                        
-                        }
-                } else {
-                    Menu {
-                        Button(action: {
-                            movesLevel = "0"
-                        }, label: {
-                            Text("BV")
-                        })
-                        Button(action: {
-                            movesLevel = "1"
-                        }, label: {
-                            Text("1")
-                        })
-                        Button(action: {
-                            movesLevel = "2"
-                        }, label: {
-                            Text("2")
-                        })
-                        Button(action: {
-                            movesLevel = "3"
-                        }, label: {
-                            Text("3")
-                        })
-                        Button(action: {
-                            movesLevel = "4"
-                        }, label: {
-                            Text("4")
-                        })
-                        
-                    } label: {
-                        Text("\(movesLevel)")
+                        Text("\(secondElement)")
+                            .padding()
                     }
                 }
-                
-                
-                
-                
-            }
                 
                 Spacer()
                 
@@ -747,34 +405,24 @@ struct OpenShortProgram: View {
                             .font(.caption)
                             .frame(maxWidth:65, maxHeight: 40)
                     }
-                    //                  VStack{
-                    //                       Text("Total:")
-                    //                       .font(.title3)
-                    //                        .foregroundColor(Color("Navy"))
-                    //                     Text("\(finalComponentScore)")
-                    //                        .elementResult()
-                    //                  }
-                    //         }
-                    
-                    
                 }
                 
-            Spacer()
-            
-            HStack (spacing: 18) {
-                Text("Deductions")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.leading)
+                Spacer()
                 
-                TextField("Points", text: $deductions)
-                    .textFieldStyle(.roundedBorder)
-                    .font(.callout)
-                    .font(.caption)
-                    .frame(maxWidth:65, maxHeight: 40)
-            }
+                HStack (spacing: 18) {
+                    Text("Deductions")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Points", text: $deductions)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.callout)
+                        .font(.caption)
+                        .frame(maxWidth:65, maxHeight: 40)
+                }
                 
-            HStack {
+                HStack {
                     Text("Total Score")
                         .breakdownTitle()
                     
@@ -786,40 +434,41 @@ struct OpenShortProgram: View {
                         .padding(26)
                 }
                 
-            Button(action: {
-                let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
-                let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                let movesss = correctSMovesLevel(level: "\(movesLevel)")
+                Button(action: {
+                    let pivottt = Functions.correctPivotLevel (level: "\(pivotLevel)")
+                    let noHolddd = Functions.correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
+                    let triangleee = Functions.correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                    let twizzlesss = Functions.correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                    let movesss = Functions.correctSMovesLevel(level: "\(movesLevel)")
+                    
+                    deductionScore = Double(deductions)!
+                    
+                    finalPivotValue = String(format: "%.2f", pivottt)
+                    finalNoHoldValue = String(format: "%.2f", noHolddd)
+                    finalTriangleValue = String(format: "%.2f", triangleee)
+                    finalTwizzlesValue = String(format: "%.2f", twizzlesss)
+                    finalMovesValue = String(format: "%.2f", movesss)
+                    let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
+                    finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
+                    techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
+                    finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
+                }){
+                    Text("Calculate")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: 110, maxHeight: 30)
+                        .padding(4)
+                }
+                .background(Color("Navy"))
+                .clipShape(Capsule())
                 
-                deductionScore = Double(deductions)!
-                
-                finalPivotValue = String(format: "%.2f", pivottt)
-                finalSNoHoldValue = String(format: "%.2f", noHolddd)
-                finalTriangleValue = String(format: "%.2f", triangleee)
-                finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                finalMovesValue = String(format: "%.2f", movesss)
-                let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
-                finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
-                finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
-            }){
-                Text("Calculate")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 110, maxHeight: 30)
-                    .padding(4)
-            }
-            .background(Color("Navy"))
-            .clipShape(Capsule())
-            
-       //         Spacer()
+                //         Spacer()
                 
             }
         }
     }
+//}
 
 struct OpenShortProgram_Previews: PreviewProvider {
     static var previews: some View {
