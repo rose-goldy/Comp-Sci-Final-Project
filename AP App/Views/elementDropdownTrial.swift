@@ -13,6 +13,8 @@ struct elementDropdownTrial: View {
 
     var what = "Yuie"
     
+    var trialElements: [String] = ["Line Element", "Synchronized Spin", "Moves", "Traveling Element", "Whip Intersection"]
+    
     var body: some View {
     
         VStack {
@@ -58,6 +60,20 @@ struct elementDropdownTrial: View {
                 }, label: {
                     Text("Creative Lift")
                 })
+                
+            } label: {
+                Text("\(selectedElement)")
+                    .padding()
+            }
+            
+            Menu {
+                ForEach(0...trialElements.count-1, id: \.self) {trial in
+                    Button(action: {
+                        selectedElement = "\(trialElements[trial])"
+                    }, label: {
+                        Text("\(trialElements[trial])")
+                    })
+                }
                 
             } label: {
                 Text("\(selectedElement)")

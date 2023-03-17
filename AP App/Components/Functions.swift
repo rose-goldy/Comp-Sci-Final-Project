@@ -34,7 +34,7 @@ class Functions: ObservableObject {
     @Published private(set) var techScore: Double = 0.0
     @Published private(set) var deductions: String = ""
     @Published private(set) var deductionScore: Double = 0.0
-    @Published private(set) var firstElement: String = "Element 1"
+    @Published var firstElement: String = "Element 1"
     @Published private(set) var secondElement: String = "Element 2"
     @Published private(set) var thirdElement: String = "Element 3"
     @Published private(set) var fourthElement: String = "Element 4"
