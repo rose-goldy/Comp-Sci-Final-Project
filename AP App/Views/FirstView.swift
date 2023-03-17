@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FirstView: View {
+    @StateObject var functions = Functions()
     var body: some View {
         NavigationView {
             VStack (spacing: 100) {

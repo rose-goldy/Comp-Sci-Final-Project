@@ -9,7 +9,8 @@ import SwiftUI
 
 //class OpenShortProgram: ObservableObject {
     struct OpenShortProgram: View {
-        @EnvironmentObject var functions = Functions
+  //      @EnvironmentObject var functions = Functions
+        @EnvironmentObject var functions: Functions
         
         @State var pivotGOE: String = ""
         @State var noHoldGOE: String = ""
@@ -41,7 +42,7 @@ import SwiftUI
         @State var thirdElement: String = "Element 3"
         @State var fourthElement: String = "Element 4"
         @State var fifthElement: String = "Element 5"
-        
+
         
         //   var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
         //  var shortElements: [String] = ["\(firstElement)", "\(secondElement)", "\(thirdElement)", "\(fourthElement)", "\(fifthElement)"]
@@ -435,11 +436,11 @@ import SwiftUI
                 }
                 
                 Button(action: {
-                    let pivottt = Functions.correctPivotLevel (level: "\(pivotLevel)")
-                    let noHolddd = Functions.correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
-                    let triangleee = Functions.correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                    let twizzlesss = Functions.correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                    let movesss = Functions.correctSMovesLevel(level: "\(movesLevel)")
+                    let pivottt = functions.correctPivotLevel(level: "\(pivotLevel)")
+                    let noHolddd = functions.correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
+                    let triangleee = functions.correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                    let twizzlesss = functions.correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                    let movesss = functions.correctSMovesLevel(level: "\(movesLevel)")
                     
                     deductionScore = Double(deductions)!
                     
@@ -473,5 +474,6 @@ import SwiftUI
 struct OpenShortProgram_Previews: PreviewProvider {
     static var previews: some View {
         OpenShortProgram()
+            .environmentObject(Functions())
     }
 }

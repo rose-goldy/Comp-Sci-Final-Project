@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ShortProgram: View {
+    @EnvironmentObject var functions: Functions
+    
     @State var pivotGOE: String = ""
     @State var noHoldGOE: String = ""
     @State var triangleGOE: String = ""
@@ -600,6 +602,7 @@ struct ShortProgram: View {
                 Spacer()
                 
             }
+        .navigationBarHidden(true)
         }
     }
     
@@ -607,6 +610,7 @@ struct ShortProgram: View {
     struct ShortProgram_Previews: PreviewProvider {
         static var previews: some View {
             ShortProgram()
+                .environmentObject(Functions())
         }
     }
 

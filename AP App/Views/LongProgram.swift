@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LongProgram: View {
+    @EnvironmentObject var functions: Functions
     
     @State var lineGOE: String = ""
     @State var spinGOE: String = ""
@@ -830,11 +831,13 @@ struct LongProgram: View {
             .clipShape(Capsule())
             
         }
+        .navigationBarHidden(true)
     }
 }
 
 struct LongProgram_Previews: PreviewProvider {
     static var previews: some View {
         LongProgram()
+            .environmentObject(Functions())
     }
 }
