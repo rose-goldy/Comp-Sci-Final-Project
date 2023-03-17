@@ -62,3 +62,32 @@ extension Text {
     }
 }
 
+extension TextField {
+    func componentResult() -> some View {
+        self.textFieldStyle(.roundedBorder)
+            .font(.callout)
+            .font(.caption)
+            .frame(maxWidth:65, maxHeight: 40)
+    }
+}
+
+extension Text {
+    func deduction() -> some View {
+        self.font(.title2)
+            .fontWeight(.heavy)
+            .multilineTextAlignment(.leading)
+    }
+}
+
+extension Text {
+    func finalScore() -> some View {
+        self.frame(maxWidth: 70, maxHeight: 34)
+            .foregroundColor(.white)
+            .background(Color("Navy"))
+            .cornerRadius(6)
+            .padding(26)
+    }
+}
+
+
+

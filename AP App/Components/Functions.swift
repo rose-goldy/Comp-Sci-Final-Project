@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 class Functions: ObservableObject {
-    @Published private(set) var pivotGOE: String = ""
-    @Published private(set) var noHoldGOE: String = ""
-    @Published private(set) var triangleGOE: String = ""
-    @Published private(set) var twizzlesGOE: String = ""
-    @Published private(set) var movesGOE: String = ""
+    @State private var pivotGOE: String = ""
+    @State private var noHoldGOE: String = ""
+    @State private var triangleGOE: String = ""
+    @State private var twizzlesGOE: String = ""
+    @State private var movesGOE: String = ""
     @Published private(set) var finalPivotValue: String = ""
     @Published private(set) var finalNoHoldValue: String = ""
     @Published private(set) var finalTriangleValue: String = ""
@@ -39,6 +39,8 @@ class Functions: ObservableObject {
     @Published private(set) var thirdElement: String = "Element 3"
     @Published private(set) var fourthElement: String = "Element 4"
     @Published private(set) var fifthElement: String = "Element 5"
+    
+    var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
     
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
@@ -254,6 +256,176 @@ class Functions: ObservableObject {
             return movesValue
         }
     }
+    
+  
+    
+    
+    
+//    func setUp(element: String) {
+//        Menu {
+//            ForEach(0...4, id: \.self) {index in
+//                Button(action: {
+//                    pivotLevel = "\(index)"
+//                }, label: {
+//                    Text("\(index)")
+//                })
+//            }
+//
+//        } label: {
+//            Text("\(pivotLevel)")
+//        }
+//
+//        TextField("GOE", text: $pivotGOE)
+//            .gOEInput()
+//
+//        Text("\(finalPivotValue)")
+//            .elementResult()
+//    }
+//    
+    
+    
+    
+    
+    
+//    func setUp() {
+//        ForEach(0...possibleSElements.count-1, id: \.self) {element in
+//            if possibleSElements[element] == "Pivot Block" {
+//                HStack{
+//                    Menu {
+//                        ForEach(0...4, id: \.self) {index in
+//                            Button(action: {
+//                                pivotLevel = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//                    } label: {
+//                        Text("\(pivotLevel)")
+//                    }
+//
+//                    TextField("GOE", text: $pivotGOE)
+//                        .gOEInput()
+//
+//                    Text("\(finalPivotValue)")
+//                        .elementResult()
+//
+//                }
+//            } else if possibleSElements[element] == "No Hold" {
+//                HStack (spacing: 8) {
+//                    Menu {
+//                        ForEach(0...4, id: \.self) {index in
+//                            Button(action: {
+//                                noHoldLevel = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//                    } label: {
+//                        Text("\(noHoldLevel)")
+//                    }
+//
+//                    Menu {
+//                        Button(action: {
+//                            noHoldSteps = "0"
+//                        }, label: {
+//                            Text("BV")
+//                        })
+//
+//                    } label: {
+//                        Text("\(noHoldSteps)")
+//                    }
+//
+//                    TextField("GOE", text: $noHoldGOE)
+//                        .gOEInput()
+//
+//                    Text("\(finalNoHoldValue)")
+//                        .elementResult()
+//
+//                }
+//            } else if possibleSElements[element] == "Triangle Intersection" {
+//                HStack (spacing: 14) {
+//                    Menu {
+//                        ForEach(0...4, id: \.self) {index in
+//                            Button(action: {
+//                                triangleI = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//                    } label: {
+//                        Text("\(triangleI)")
+//                    }
+//
+//                    Menu {
+//                        ForEach(0...3, id: \.self) {index in
+//                            Button(action: {
+//                                trianglePI = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//
+//                    } label: {
+//                        Text("\(trianglePI)")
+//                    }
+//
+//                    TextField("GOE", text: $triangleGOE)
+//                        .gOEInput()
+//
+//                    Text("\(finalTriangleValue)")
+//                        .elementResult()
+//
+//                }
+//            } else if possibleSElements[element] == "Twizzles" {
+//                HStack{
+//                    Menu {
+//                        ForEach(0...4, id: \.self) {index in
+//                            Button(action: {
+//                                twizzlesLevel = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//
+//                    } label: {
+//                        Text("\(twizzlesLevel)")
+//                    }
+//
+//                    TextField("GOE", text: $twizzlesGOE)
+//                        .gOEInput()
+//
+//                    Text("\(finalTwizzlesValue)")
+//                        .elementResult()
+//
+//                }
+//            } else {
+//                HStack{
+//                    Menu {
+//                        ForEach(0...4, id: \.self) {index in
+//                            Button(action: {
+//                                movesLevel = "\(index)"
+//                            }, label: {
+//                                Text("\(index)")
+//                            })
+//                        }
+//
+//                    } label: {
+//                        Text("\(movesLevel)")
+//                    }
+//
+//                    TextField("GOE", text: $movesGOE)
+//                        .gOEInput()
+//
+//                    Text("\(finalMovesValue)")
+//                        .elementResult()
+//                }
+//            }
+//        }
     
     
 //    func elementSetUp (element: String) {

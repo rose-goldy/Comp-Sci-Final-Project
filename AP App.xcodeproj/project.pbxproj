@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B12D29029C272490070A8F8 /* elementDropdownTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */; };
 		8B12D29229C27C000070A8F8 /* OpenShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */; };
+		8B248DDB29C4D7F000E145AF /* ElementDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B248DDA29C4D7F000E145AF /* ElementDetail.swift */; };
 		8B49F5AA29B8E39000E360BB /* AP_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5A929B8E39000E360BB /* AP_AppApp.swift */; };
 		8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5AB29B8E39000E360BB /* ContentView.swift */; };
 		8B49F5AE29B8E39100E360BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B49F5AD29B8E39100E360BB /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elementDropdownTrial.swift; sourceTree = "<group>"; };
 		8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenShortProgram.swift; sourceTree = "<group>"; };
+		8B248DDA29C4D7F000E145AF /* ElementDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetail.swift; sourceTree = "<group>"; };
 		8B49F5A629B8E39000E360BB /* AP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B49F5A929B8E39000E360BB /* AP_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AP_AppApp.swift; sourceTree = "<group>"; };
 		8B49F5AB29B8E39000E360BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				8B49F5C529B8E48400E360BB /* LongProgram.swift */,
 				8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */,
 				8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */,
+				8B248DDA29C4D7F000E145AF /* ElementDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */,
+				8B248DDB29C4D7F000E145AF /* ElementDetail.swift in Sources */,
 				8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */,
 				8B49F5C229B8E46C00E360BB /* FirstView.swift in Sources */,
 				8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */,

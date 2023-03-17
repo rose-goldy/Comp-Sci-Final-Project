@@ -42,340 +42,30 @@ import SwiftUI
         @State var thirdElement: String = "Element 3"
         @State var fourthElement: String = "Element 4"
         @State var fifthElement: String = "Element 5"
+        @State var selectedElement: String = "Element"
+        
+    //    @State var element = "firstElement"
 
         
         //   var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
-        //  var shortElements: [String] = ["\(firstElement)", "\(secondElement)", "\(thirdElement)", "\(fourthElement)", "\(fifthElement)"]
+          var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
         
         var body: some View {
             VStack (spacing: 2) {
                 
                 //       Spacer()
                 
-       //         var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
-                
-        //        VStack (spacing: 23) {
-//                    ForEach(0...shortElements.count-1, id: \.self) {index in
-//                        if index == "Pivot Block" {
-//                            HStack{
-//                                Menu {
-//                                    Button(action: {
-//                                        pivotLevel = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        pivotLevel = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        pivotLevel = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        pivotLevel = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        pivotLevel = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(pivotLevel)")
-//                                }
-//
-//                                TextField("GOE", text: $pivotGOE)
-//                                    .gOEInput()
-//
-//                                Text("\(finalPivotValue)")
-//                                    .elementResult()
-//
-//                            }
-//                        } else if index == "No Hold" {
-//                            HStack (spacing: 8) {
-//                                Menu {
-//                                    Button(action: {
-//                                        noHoldLevel = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        noHoldLevel = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        noHoldLevel = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        noHoldLevel = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        noHoldLevel = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(noHoldLevel)")
-//                                }
-//
-//                                Menu {
-//                                    Button(action: {
-//                                        noHoldSteps = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(noHoldSteps)")
-//                                }
-//
-//                                TextField("GOE", text: $noHoldGOE)
-//                                    .gOEInput()
-//
-//                                Text("\(finalNoHoldValue)")
-//                                    .elementResult()
-//
-//                            }
-//                        } else if index == "Triangle Intersection" {
-//                            HStack (spacing: 14) {
-//                                Menu {
-//                                    Button(action: {
-//                                        triangleI = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        triangleI = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        triangleI = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        triangleI = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        triangleI = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(triangleI)")
-//                                }
-//
-//                                Menu {
-//                                    Button(action: {
-//                                        trianglePI = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        trianglePI = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        trianglePI = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        trianglePI = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        trianglePI = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(trianglePI)")
-//                                }
-//
-//                                TextField("GOE", text: $triangleGOE)
-//                                    .gOEInput()
-//
-//                                Text("\(finalTriangleValue)")
-//                                    .elementResult()
-//
-//                            }
-//                        } else if index == "Twizzles" {
-//                            HStack{
-//                                Menu {
-//                                    Button(action: {
-//                                        twizzlesLevel = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        twizzlesLevel = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        twizzlesLevel = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        twizzlesLevel = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        twizzlesLevel = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(twizzlesLevel)")
-//                                }
-//
-//                                TextField("GOE", text: $twizzlesGOE)
-//                                    .gOEInput()
-//
-//                                Text("\(finalTwizzlesValue)")
-//                                    .elementResult()
-//
-//                            }
-//                        } else {
-//                            HStack{
-//                                Menu {
-//                                    Button(action: {
-//                                        movesLevel = "0"
-//                                    }, label: {
-//                                        Text("BV")
-//                                    })
-//                                    Button(action: {
-//                                        movesLevel = "1"
-//                                    }, label: {
-//                                        Text("1")
-//                                    })
-//                                    Button(action: {
-//                                        movesLevel = "2"
-//                                    }, label: {
-//                                        Text("2")
-//                                    })
-//                                    Button(action: {
-//                                        movesLevel = "3"
-//                                    }, label: {
-//                                        Text("3")
-//                                    })
-//                                    Button(action: {
-//                                        movesLevel = "4"
-//                                    }, label: {
-//                                        Text("4")
-//                                    })
-//
-//                                } label: {
-//                                    Text("\(movesLevel)")
-//                                }
-//
-//                                TextField("GOE", text: $movesGOE)
-//                                    .gOEInput()
-//
-//                                Text("\(finalMovesValue)")
-//                                    .elementResult()
-//                            }
-//                        }
-//                    }
+                VStack (spacing: 23) {
                     
-       //         }
+                }
                 
                 Text("Technical Score")
                     .breakdownTitle()
                     .padding()
                 
-                HStack{
-                    Menu {
-                        Button(action: {
-                            firstElement = "Pivot Block"
-                        }, label: {
-                            Text("Pivot Block")
-                        })
-                        Button(action: {
-                            firstElement = "No Hold"
-                        }, label: {
-                            Text("No Hold")
-                        })
-                        Button(action: {
-                            firstElement = "Triangle Intersection"
-                        }, label: {
-                            Text("Triangle Intersection")
-                        })
-                        Button(action: {
-                            firstElement = "Twizzles"
-                        }, label: {
-                            Text("Twizzles")
-                        })
-                        Button(action: {
-                            firstElement = "Moves"
-                        }, label: {
-                            Text("Moves")
-                        })
-                        
-                    } label: {
-                        Text("\(firstElement)")
-                            .padding()
-                    }
-                    
-                }
-                
-                HStack{
-                    Menu {
-                        Button(action: {
-                            secondElement = "Pivot Block"
-                        }, label: {
-                            Text("Pivot Block")
-                        })
-                        Button(action: {
-                            secondElement = "No Hold"
-                        }, label: {
-                            Text("No Hold")
-                        })
-                        Button(action: {
-                            secondElement = "Triangle Intersection"
-                        }, label: {
-                            Text("Triangle Intersection")
-                        })
-                        Button(action: {
-                            secondElement = "Twizzles"
-                        }, label: {
-                            Text("Twizzles")
-                        })
-                        Button(action: {
-                            secondElement = "Moves"
-                        }, label: {
-                            Text("Moves")
-                        })
-                        
-                    } label: {
-                        Text("\(secondElement)")
-                            .padding()
-                    }
-                }
-                
-                Spacer()
+                ElementDetail()
+                               
+       //         Spacer()
                 
                 Text("Component Score")
                     .breakdownTitle()
@@ -391,36 +81,22 @@ import SwiftUI
                     }
                     VStack{
                         TextField("Score", text: $compScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
+                            .componentResult()
                         TextField("Score", text: $presScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
+                            .componentResult()
                         TextField("Score", text: $ssScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
+                            .componentResult()
                     }
                 }
                 
-                Spacer()
+    //            Spacer()
                 
                 HStack (spacing: 18) {
                     Text("Deductions")
-                        .font(.title2)
-                        .fontWeight(.heavy)
-                        .multilineTextAlignment(.leading)
+                        .deduction()
                     
                     TextField("Points", text: $deductions)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.callout)
-                        .font(.caption)
-                        .frame(maxWidth:65, maxHeight: 40)
+                        .componentResult()
                 }
                 
                 HStack {
@@ -428,11 +104,7 @@ import SwiftUI
                         .breakdownTitle()
                     
                     Text("\(finalTotalScore)")
-                        .frame(maxWidth: 70, maxHeight: 34)
-                        .foregroundColor(.white)
-                        .background(Color("Navy"))
-                        .cornerRadius(6)
-                        .padding(26)
+                        .finalScore()
                 }
                 
                 Button(action: {
@@ -441,9 +113,9 @@ import SwiftUI
                     let triangleee = functions.correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
                     let twizzlesss = functions.correctTwizzlesLevel(level: "\(twizzlesLevel)")
                     let movesss = functions.correctSMovesLevel(level: "\(movesLevel)")
-                    
+
                     deductionScore = Double(deductions)!
-                    
+
                     finalPivotValue = String(format: "%.2f", pivottt)
                     finalNoHoldValue = String(format: "%.2f", noHolddd)
                     finalTriangleValue = String(format: "%.2f", triangleee)
