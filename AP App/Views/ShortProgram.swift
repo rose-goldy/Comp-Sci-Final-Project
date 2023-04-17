@@ -252,6 +252,7 @@ struct ShortProgram: View {
     }
     
     var body: some View {
+        
         VStack (spacing: 2) {
             
             //       Spacer()

@@ -11,6 +11,15 @@ import SwiftUI
     struct OpenShortProgram: View {
   //      @EnvironmentObject var functions = Functions
         @EnvironmentObject var functions: Functions
+   
+        
+        //now figure out how to add all the element values
+        
+        //ROSE
+//        ROSE
+//        ROSE
+//        ROSE
+//        NEXT THING TO DO IS MODIFY EACH INDIVIDUAL ELEMENT SO THAT THE SPACING WILL BE DIFFERENT (I.E. FOR THE NO HOLD WHICH HAS TWO INPUTS, THE NO HOLD BOX TEXT THING SHOULD BE SMALLER)
         
         @State var pivotGOE: String = ""
         @State var noHoldGOE: String = ""
@@ -111,7 +120,7 @@ import SwiftUI
                     let pivottt = functions.correctPivotLevel(level: "\(pivotLevel)")
                     let noHolddd = functions.correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
                     let triangleee = functions.correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                    let twizzlesss = functions.correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                    let twizzlesss = functions.correctTwizzlesLevel(level: "\(twizzlesLevel)") 
                     let movesss = functions.correctSMovesLevel(level: "\(movesLevel)")
 
                     deductionScore = Double(deductions)!

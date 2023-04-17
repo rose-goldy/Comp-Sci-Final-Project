@@ -46,6 +46,12 @@ struct ElementDetail: View {
 //    @State var element = "firstElement"
 
     
+    //ROSE
+//        ROSE
+//        ROSE
+//        ROSE
+//        NEXT THING TO DO IS MODIFY EACH INDIVIDUAL ELEMENT SO THAT THE SPACING WILL BE DIFFERENT (I.E. FOR THE NO HOLD WHICH HAS TWO INPUTS, THE NO HOLD BOX TEXT THING SHOULD BE SMALLER)
+    
       var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
     
     var body: some View {
@@ -66,8 +72,7 @@ struct ElementDetail: View {
                 } label: {
                     Text("\(firstElement)")
                         .frame(maxWidth: 165)
-                        .ignoresSafeArea()
-                        .padding(.leading, 5)
+                        .padding()
                 }
                 //                   functions.setUp(element: firstElement)
                 //closure, subview
