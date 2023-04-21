@@ -252,101 +252,102 @@ struct ShortProgram: View {
     }
     
     var body: some View {
-        
-        VStack (spacing: 2) {
+        NavigationView{
             
-            //       Spacer()
-            
-            Text("Technical Score")
-                .breakdownTitle()
-                .padding()
-            
-            HStack (spacing: 6) {
-                VStack (spacing: 23) {
-                    ForEach(0...shortElements.count-1, id: \.self) {index in
-                        Text(shortElements[index].text)
-                            .elementTitle()
-                    }
-                    
-                }
-                VStack (spacing: 22) {
-                    
-                    Menu {
-                        Button(action: {
-                            pivotLevel = "0"
-                        }, label: {
-                            Text("BV")
-                        })
-                        Button(action: {
-                            pivotLevel = "1"
-                        }, label: {
-                            Text("1")
-                        })
-                        Button(action: {
-                            pivotLevel = "2"
-                        }, label: {
-                            Text("2")
-                        })
-                        Button(action: {
-                            pivotLevel = "3"
-                        }, label: {
-                            Text("3")
-                        })
-                        Button(action: {
-                            pivotLevel = "4"
-                        }, label: {
-                            Text("4")
-                        })
+            VStack (spacing: 2) {
+                
+                //       Spacer()
+                
+                Text("Technical Score")
+                    .breakdownTitle()
+                    .padding()
+                
+                HStack (spacing: 6) {
+                    VStack (spacing: 23) {
+                        ForEach(0...shortElements.count-1, id: \.self) {index in
+                            Text(shortElements[index].text)
+                                .elementTitle()
+                        }
                         
-                    } label: {
-                        Text("\(pivotLevel)")
                     }
-                    
-                    HStack (spacing: 8) {
+                    VStack (spacing: 22) {
+                        
                         Menu {
                             Button(action: {
-                                noHoldLevel = "0"
+                                pivotLevel = "0"
                             }, label: {
                                 Text("BV")
                             })
                             Button(action: {
-                                noHoldLevel = "1"
+                                pivotLevel = "1"
                             }, label: {
                                 Text("1")
                             })
                             Button(action: {
-                                noHoldLevel = "2"
+                                pivotLevel = "2"
                             }, label: {
                                 Text("2")
                             })
                             Button(action: {
-                                noHoldLevel = "3"
+                                pivotLevel = "3"
                             }, label: {
                                 Text("3")
                             })
                             Button(action: {
-                                noHoldLevel = "4"
+                                pivotLevel = "4"
                             }, label: {
                                 Text("4")
                             })
                             
                         } label: {
-                            Text("\(noHoldLevel)")
+                            Text("\(pivotLevel)")
                         }
                         
-                        Menu {
-                            Button(action: {
-                                noHoldSteps = "0"
-                            }, label: {
-                                Text("BV")
-                            })
+                        HStack (spacing: 8) {
+                            Menu {
+                                Button(action: {
+                                    noHoldLevel = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    noHoldLevel = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    noHoldLevel = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    noHoldLevel = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    noHoldLevel = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(noHoldLevel)")
+                            }
                             
-                        } label: {
-                            Text("\(noHoldSteps)")
+                            Menu {
+                                Button(action: {
+                                    noHoldSteps = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                
+                            } label: {
+                                Text("\(noHoldSteps)")
+                            }
                         }
-                    }
                         
-                    HStack (spacing: 14) {
+                        HStack (spacing: 14) {
                             Menu {
                                 Button(action: {
                                     triangleI = "0"
@@ -486,7 +487,7 @@ struct ShortProgram: View {
                             .gOEInput()
                     }
                     
-                VStack (spacing: 19.5) {
+                    VStack (spacing: 19.5) {
                         Text("\(finalPivotValue)")
                             .elementResult()
                         Text("\(finalSNoHoldValue)")
@@ -544,22 +545,22 @@ struct ShortProgram: View {
                     
                 }
                 
-            Spacer()
-            
-            HStack (spacing: 18) {
-                Text("Deductions")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.leading)
+                Spacer()
                 
-                TextField("Points", text: $deductions)
-                    .textFieldStyle(.roundedBorder)
-                    .font(.callout)
-                    .font(.caption)
-                    .frame(maxWidth:65, maxHeight: 40)
-            }
+                HStack (spacing: 18) {
+                    Text("Deductions")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.leading)
+                    
+                    TextField("Points", text: $deductions)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.callout)
+                        .font(.caption)
+                        .frame(maxWidth:65, maxHeight: 40)
+                }
                 
-            HStack {
+                HStack {
                     Text("Total Score")
                         .breakdownTitle()
                     
@@ -571,39 +572,49 @@ struct ShortProgram: View {
                         .padding(26)
                 }
                 
-            Button(action: {
-                let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
-                let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                let movesss = correctSMovesLevel(level: "\(movesLevel)")
+                HStack (spacing: 20){
+                    Button(action: {
+                        let pivottt = correctPivotLevel (level: "\(pivotLevel)")
+                        let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
+                        let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                        let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                        let movesss = correctSMovesLevel(level: "\(movesLevel)")
+                        
+                        deductionScore = Double(deductions)!
+                        
+                        finalPivotValue = String(format: "%.2f", pivottt)
+                        finalSNoHoldValue = String(format: "%.2f", noHolddd)
+                        finalTriangleValue = String(format: "%.2f", triangleee)
+                        finalTwizzlesValue = String(format: "%.2f", twizzlesss)
+                        finalMovesValue = String(format: "%.2f", movesss)
+                        let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
+                        finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
+                        techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
+                        finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
+                        
+                    }){
+                        Text("Calculate")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 110, maxHeight: 42)
+                            .padding(4)
+                    }
+                    .background(Color("Navy"))
+                    .clipShape(Capsule())
+                    
+                    NavigationLink {
+                        OneTeamView()
+                    } label: {
+                        LeaveCalculator(text: "View Rankings")
+                    }
+                }
                 
-                deductionScore = Double(deductions)!
-                
-                finalPivotValue = String(format: "%.2f", pivottt)
-                finalSNoHoldValue = String(format: "%.2f", noHolddd)
-                finalTriangleValue = String(format: "%.2f", triangleee)
-                finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                finalMovesValue = String(format: "%.2f", movesss)
-                let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
-                finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
-                finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
-            }){
-                Text("Calculate")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .frame(maxWidth: 110, maxHeight: 30)
-                    .padding(4)
-            }
-            .background(Color("Navy"))
-            .clipShape(Capsule())
-            
                 Spacer()
                 
             }
-        .navigationBarHidden(true)
+            //      .navigationBarHidden(true)
+        }
         }
     }
     

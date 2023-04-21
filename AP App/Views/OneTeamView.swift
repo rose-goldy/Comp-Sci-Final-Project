@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OneTeamView: View {
+    @StateObject var functions = Functions()
     
     var oneTeamData: [String] = []
     
