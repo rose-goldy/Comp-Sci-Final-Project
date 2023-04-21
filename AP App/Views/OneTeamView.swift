@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct OneTeamView: View {
+    
+    var oneTeamData: [String] = []
+    
     var body: some View {
         HStack {
            Text("\(worldTeamList[0])")
-            Text("\(worldScoreList[0])")
+                .fontWeight(.bold)
+                .font(.title2)
+                .padding(20)
+            
+            Text("\(worldScoreList[0], specifier: "%.2f")")
+                .fontWeight(.bold)
+                .font(.title2)
+                .padding(20)
+            
         }
     }
 }

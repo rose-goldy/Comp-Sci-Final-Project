@@ -7,7 +7,7 @@
 
 import Foundation
 
-var worldTeamList : [String] = ["Team Fintastic, Nexxice, Skyliners, Dream Edges, Les Supremes, Lexettes, Hot Shivers Junior, Team Ice Fire, Team Spirit, Cool Dreams, Harmonia, Jingu Ice Messengers, Team Seaside, Team Berlin, Solway Stars, Team Mirum, Colibris Vienna, Team UTE, Illuminettes, Black Diam's, Majestic Ice, Zagreb Snowflakes, Team Vizyon"]
+var worldTeamList : [String] = ["Team Fintastic", "Nexxice", "Skyliners", "Dream Edges", "Les Supremes", "Lexettes", "Hot Shivers Junior", "Team Ice Fire", "Team Spirit", "Cool Dreams", "Harmonia", "Jingu Ice Messengers", "Team Seaside", "Team Berlin", "Solway Stars", "Team Mirum", "Colibris Vienna", "Team UTE", "Illuminettes", "Black Diam's", "Majestic Ice", "Zagreb Snowflakes", "Team Vizyon"]
 
 var worldScoreList : [Double] = [70.92, 69.40, 67.18, 66.12, 65.25, 60.44, 54.75, 48.50, 47.87, 47.32, 46.75, 44.66, 39.73, 39.67, 39.52, 39.31, 39.17, 38.97, 37.96, 37.73, 37.62, 29.14, 22.57]
 
