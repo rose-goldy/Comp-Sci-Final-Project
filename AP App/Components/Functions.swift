@@ -39,6 +39,7 @@ class Functions: ObservableObject {
     @Published private(set) var thirdElement: String = "Element 3"
     @Published private(set) var fourthElement: String = "Element 4"
     @Published private(set) var fifthElement: String = "Element 5"
+    @Published private(set) var yourScore: String = "0.0"
     
     var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
     

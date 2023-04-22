@@ -36,6 +36,10 @@ struct ShortProgram: View {
     @State var deductions: String = ""
     @State var deductionScore: Double = 0.0
     
+    @State var yourScore: String = "0.0"
+    
+ //   @Published var yourScore: Double = 0.0
+    
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
             let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00
@@ -592,6 +596,10 @@ struct ShortProgram: View {
                         techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
                         finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
                         
+                        yourScore = finalTotalScore
+                        
+                        //here is where I will add the score onto the list and maybe either here or on the next page ask for a team name
+                        
                     }){
                         Text("Calculate")
                             .font(.title3)
@@ -604,7 +612,7 @@ struct ShortProgram: View {
                     .clipShape(Capsule())
                     
                     NavigationLink {
-                        OneTeamView()
+                        WorldShortRankings()
                     } label: {
                         LeaveCalculator(text: "View Rankings")
                     }
@@ -613,7 +621,7 @@ struct ShortProgram: View {
                 Spacer()
                 
             }
-            //      .navigationBarHidden(true)
+                  .navigationBarHidden(true)
         }
         }
     }

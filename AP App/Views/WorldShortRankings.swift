@@ -14,7 +14,7 @@ import SwiftUI
 
 
 struct WorldShortRankings: View {
-    var body: some View {
+    var body: some View { 
         
         NavigationView{
             
@@ -29,33 +29,28 @@ struct WorldShortRankings: View {
                 
                 ForEach (0...worldTeamList.count-1, id: \.self) { index in
                     
-           //         let oneTeamData: [String] = [worldTeamList[index], String(worldScoreList[index]), worldTeamAndScoreList[index]]
+                    //         let oneTeamData: [String] = [worldTeamList[index], String(worldScoreList[index]), worldTeamAndScoreList[index]]
                     
                     //      NavigationLink(destination:OneTeamView
                     //                          (oneTeamData: oneTeamData)) {
                     
+                    
+                    HStack {
+                        Text("\(worldTeamList[index])")
+                            .fontWeight(.bold)
+                            .font(.title2)
                         
-                        HStack {
-                           Text("\(worldTeamList[index])")
-                                .fontWeight(.bold)
-                                .font(.title2)
-                                .padding(20)
-                            
-                            Text("\(worldScoreList[index], specifier: "%.2f")")
-                                .fontWeight(.bold)
-                                .font(.title2)
-                                .padding(20)
-                            
-                        }
+                        Spacer()
+                        
+                        Text("\(worldScoreList[index], specifier: "%.2f")")
+                            .fontWeight(.bold)
+                            .font(.title2)
+                        
+                    }
                     
                 }
                 
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
-            .background()
-            .cornerRadius(16)
-            .shadow(color: .gray, radius: 8, x:4, y:4)
             .listStyle(.plain)
         }
     }

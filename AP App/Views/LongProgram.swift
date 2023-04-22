@@ -65,6 +65,17 @@ struct LongProgram: View {
         }
     }
     
+//    func correctLineLevel (level: String) -> Double {
+//        for i in 0...4 {
+//            if (level) == "\(i)" {
+//                let lineValue = (Double(lineGOE)! * 0.1 * line.level0\(i) + line.level0\(i))
+//            }
+//        else {
+//            let lineValue = (Double(lineGOE)! * 0.1 * line.level04) + line.level04
+//           return lineValue
+//        }
+//    }
+    
     func correctSpinLevel (level: String) -> Double {
        if (level) == "0" {
            let spinValue = (Double(spinGOE)! * 0.1 * spin.level00) + spin.level00
