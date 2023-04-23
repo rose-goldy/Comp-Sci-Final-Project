@@ -14,11 +14,31 @@ import SwiftUI
 
 
 struct WorldShortRankings: View {
+    
+    @State var teamName: String = ""
+    
     var body: some View { 
         
         NavigationView{
             
             List {
+                
+                HStack {
+                    TextField("Your Team Name", text: $teamName)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth:150, maxHeight: 40)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        worldTeamAndScoreList.insert(teamName, at: 0)
+                        
+                    }, label: {
+                        Text("How do I rank?")
+                    })
+                }
                 
                 Text("World Junior Short Ranking")
                     .ignoresSafeArea()
@@ -27,26 +47,26 @@ struct WorldShortRankings: View {
                     .frame(width: 6000, height: 80)
                     .background(Color.blue)
                 
-                ForEach (0...worldTeamList.count-1, id: \.self) { index in
+                ForEach (0...worldTeamAndScoreList.count-1, id: \.self) { index in
                     
-                    //         let oneTeamData: [String] = [worldTeamList[index], String(worldScoreList[index]), worldTeamAndScoreList[index]]
+                    Text("\(worldTeamAndScoreList[index])")
+                        .fontWeight(.bold)
+                        .font(.title2)
                     
-                    //      NavigationLink(destination:OneTeamView
-                    //                          (oneTeamData: oneTeamData)) {
+                      
                     
-                    
-                    HStack {
-                        Text("\(worldTeamList[index])")
-                            .fontWeight(.bold)
-                            .font(.title2)
-                        
-                        Spacer()
-                        
-                        Text("\(worldScoreList[index], specifier: "%.2f")")
-                            .fontWeight(.bold)
-                            .font(.title2)
-                        
-                    }
+//                    HStack {
+//                        Text("\(worldTeamList[index])")
+//                            .fontWeight(.bold)
+//                            .font(.title2)
+//
+//                        Spacer()
+//
+//                        Text("\(worldScoreList[index], specifier: "%.2f")")
+//                            .fontWeight(.bold)
+//                            .font(.title2)
+//
+//                    }
                     
                 }
                 

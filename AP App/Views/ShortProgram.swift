@@ -36,7 +36,7 @@ struct ShortProgram: View {
     @State var deductions: String = ""
     @State var deductionScore: Double = 0.0
     
-    @State var yourScore: String = "0.0"
+    @State var yourScore: Double = 0.0
     
  //   @Published var yourScore: Double = 0.0
     
@@ -594,9 +594,12 @@ struct ShortProgram: View {
                         let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
                         finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
                         techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
-                        finalTotalScore = String(format: "%.2f", (techScore + (componentScore * 1.3) - deductionScore))
+                        yourScore = techScore + (componentScore * 1.3) - deductionScore
+                        finalTotalScore = String(format: "%.2f", yourScore)
                         
-                        yourScore = finalTotalScore
+                        worldScoreList.append(yourScore)
+                        
+             //           worldTeamList.insert(teamName, at: 0)
                         
                         //here is where I will add the score onto the list and maybe either here or on the next page ask for a team name
                         
