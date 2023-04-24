@@ -16,6 +16,17 @@ import SwiftUI
 struct WorldShortRankings: View {
     
     @State var teamName: String = ""
+    @State var yourScore: Double = 0.0
+    
+    func reorder (score: Double) {
+        //score will be yourScore
+        for index in worldScoreList {
+        // (0...worldScoreList.count-1, id:\.self) { index in
+            if score > worldScoreList[Int(index)] {
+                worldScoreList.insert(score, at: Int(index))
+            }
+        }
+    }
     
     var body: some View { 
         
@@ -33,14 +44,14 @@ struct WorldShortRankings: View {
                     Spacer()
                     
                     Button(action: {
-                        worldTeamAndScoreList.insert(teamName, at: 0)
+                        reorder(score: yourScore)
                         
                     }, label: {
-                        Text("How do I rank?")
+                        Rank(text: "How do I rank?")
                     })
                 }
                 
-                Text("World Junior Short Ranking")
+                Text("World Junior Short Ranking") 
                     .ignoresSafeArea()
                     .font(.title)
                     .fontWeight(.bold)
