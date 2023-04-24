@@ -40,6 +40,18 @@ struct ShortProgram: View {
     
  //   @Published var yourScore: Double = 0.0
     
+    func reorder (score: Double) {
+        //score will be yourScore
+        for index in 0...worldTeamAndScoreList.count-1 {
+        // (0...worldScoreList.count-1, id:\.self) { index in
+            if score > worldScoreList[Int(index)] {
+                worldTeamAndScoreList.insert("You!: \(String(score))", at: Int(index))
+                return
+            }
+        }
+    }
+    
+    
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
             let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00
@@ -597,7 +609,9 @@ struct ShortProgram: View {
                         yourScore = techScore + (componentScore * 1.3) - deductionScore
                         finalTotalScore = String(format: "%.2f", yourScore)
                         
-                        worldScoreList.append(yourScore)
+                        reorder(score: yourScore)
+                        
+                   //     worldScoreList.append(yourScore)
                         
              //           worldTeamList.insert(teamName, at: 0)
                         

@@ -43,6 +43,19 @@ class Functions: ObservableObject {
     
     var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
     
+    func reorder (score: Double) {
+        //score will be yourScore
+        for index in 0...worldTeamAndScoreList.count-1 {
+        // (0...worldScoreList.count-1, id:\.self) { index in
+            if score > worldScoreList[Int(index)] {
+                worldTeamAndScoreList.insert(String(score), at: Int(index))
+            } else {
+                worldTeamAndScoreList = ["oh no"]
+            }
+        }
+    }
+    
+    
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
             let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00

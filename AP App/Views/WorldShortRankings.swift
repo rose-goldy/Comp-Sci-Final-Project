@@ -16,42 +16,49 @@ import SwiftUI
 struct WorldShortRankings: View {
     
     @State var teamName: String = ""
-    @State var yourScore: Double = 0.0
+    @State var yourNewScore: String = ""
     
-    func reorder (score: Double) {
-        //score will be yourScore
-        for index in worldScoreList {
-        // (0...worldScoreList.count-1, id:\.self) { index in
-            if score > worldScoreList[Int(index)] {
-                worldScoreList.insert(score, at: Int(index))
-            }
-        }
-    }
+//    func reorder (score: Double) {
+//        //score will be yourScore
+//        for index in 0...worldTeamAndScoreList.count-1 {
+//        // (0...worldScoreList.count-1, id:\.self) { index in
+//            if score > worldScoreList[Int(index)] {
+//                worldTeamAndScoreList.insert(String(score), at: Int(index))
+//            } else {
+//                worldTeamAndScoreList = ["oh no"]
+//            }
+//        }
+//    }
     
     var body: some View { 
         
         NavigationView{
             
             List {
+//                HStack {
+//                    TextField("Team Name", text: $teamName)
+//                        .textFieldStyle(.roundedBorder)
+//                        .font(.callout)
+//                        .multilineTextAlignment(.center)
+//                        .frame(maxWidth:110, maxHeight: 40)
+//
+//                    TextField("Score", text: $yourNewScore)
+//                        .textFieldStyle(.roundedBorder)
+//                        .font(.callout)
+//                        .multilineTextAlignment(.center)
+//                        .frame(maxWidth:60, maxHeight: 40)
+//
+//                    Spacer()
+//
+//                    Button(action: {
+//                        reorder(score: Double(yourNewScore)!)
+//
+//                    }, label: {
+//                        Rank(text: "How do I rank?")
+//                    })
+//                }
                 
-                HStack {
-                    TextField("Your Team Name", text: $teamName)
-                        .textFieldStyle(.roundedBorder)
-                        .font(.callout)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth:150, maxHeight: 40)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        reorder(score: yourScore)
-                        
-                    }, label: {
-                        Rank(text: "How do I rank?")
-                    })
-                }
-                
-                Text("World Junior Short Ranking") 
+                Text("World Junior Short Ranking")
                     .ignoresSafeArea()
                     .font(.title)
                     .fontWeight(.bold)
@@ -63,8 +70,6 @@ struct WorldShortRankings: View {
                     Text("\(worldTeamAndScoreList[index])")
                         .fontWeight(.bold)
                         .font(.title2)
-                    
-                      
                     
 //                    HStack {
 //                        Text("\(worldTeamList[index])")
