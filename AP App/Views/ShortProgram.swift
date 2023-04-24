@@ -37,6 +37,7 @@ struct ShortProgram: View {
     @State var deductionScore: Double = 0.0
     
     @State var yourScore: Double = 0.0
+    @State var teamName: String = ""
     
  //   @Published var yourScore: Double = 0.0
     
@@ -270,298 +271,301 @@ struct ShortProgram: View {
     var body: some View {
         NavigationView{
             
-            VStack (spacing: 2) {
+            VStack (spacing: 10) {
                 
                 //       Spacer()
-                
-                Text("Technical Score")
-                    .breakdownTitle()
-                    .padding()
-                
-                HStack (spacing: 6) {
-                    VStack (spacing: 23) {
-                        ForEach(0...shortElements.count-1, id: \.self) {index in
-                            Text(shortElements[index].text)
-                                .elementTitle()
-                        }
-                        
-                    }
-                    VStack (spacing: 22) {
-                        
-                        Menu {
-                            Button(action: {
-                                pivotLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                pivotLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                pivotLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                pivotLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                pivotLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(pivotLevel)")
-                        }
-                        
-                        HStack (spacing: 8) {
-                            Menu {
-                                Button(action: {
-                                    noHoldLevel = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    noHoldLevel = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    noHoldLevel = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    noHoldLevel = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    noHoldLevel = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(noHoldLevel)")
-                            }
-                            
-                            Menu {
-                                Button(action: {
-                                    noHoldSteps = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                
-                            } label: {
-                                Text("\(noHoldSteps)")
-                            }
-                        }
-                        
-                        HStack (spacing: 14) {
-                            Menu {
-                                Button(action: {
-                                    triangleI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    triangleI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    triangleI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    triangleI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    triangleI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(triangleI)")
-                            }
-                            
-                            Menu {
-                                Button(action: {
-                                    trianglePI = "0"
-                                }, label: {
-                                    Text("BV")
-                                })
-                                Button(action: {
-                                    trianglePI = "1"
-                                }, label: {
-                                    Text("1")
-                                })
-                                Button(action: {
-                                    trianglePI = "2"
-                                }, label: {
-                                    Text("2")
-                                })
-                                Button(action: {
-                                    trianglePI = "3"
-                                }, label: {
-                                    Text("3")
-                                })
-                                Button(action: {
-                                    trianglePI = "4"
-                                }, label: {
-                                    Text("4")
-                                })
-                                
-                            } label: {
-                                Text("\(trianglePI)")
-                            }
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                twizzlesLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                twizzlesLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(twizzlesLevel)")
-                        }
-                        
-                        Menu {
-                            Button(action: {
-                                movesLevel = "0"
-                            }, label: {
-                                Text("BV")
-                            })
-                            Button(action: {
-                                movesLevel = "1"
-                            }, label: {
-                                Text("1")
-                            })
-                            Button(action: {
-                                movesLevel = "2"
-                            }, label: {
-                                Text("2")
-                            })
-                            Button(action: {
-                                movesLevel = "3"
-                            }, label: {
-                                Text("3")
-                            })
-                            Button(action: {
-                                movesLevel = "4"
-                            }, label: {
-                                Text("4")
-                            })
-                            
-                        } label: {
-                            Text("\(movesLevel)")
-                        }
-                    }
+                VStack (spacing: 4){
+                    Text("Technical Score")
+                        .breakdownTitle()
+                        .padding()
                     
-                    VStack (spacing: 8) {
-                        TextField("GOE", text: $pivotGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $noHoldGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $triangleGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $twizzlesGOE)
-                            .gOEInput()
-                        TextField("GOE", text: $movesGOE)
-                            .gOEInput()
-                    }
-                    
-                    VStack (spacing: 19.5) {
-                        Text("\(finalPivotValue)")
-                            .elementResult()
-                        Text("\(finalSNoHoldValue)")
-                            .elementResult()
-                        Text("\(finalTriangleValue)")
-                            .elementResult()
-                        Text("\(finalTwizzlesValue)")
-                            .elementResult()
-                        Text("\(finalMovesValue)")
-                            .elementResult()
-                        //          Text("\(techScore)")
+                    HStack (spacing: 6) {
+                        VStack (spacing: 23) {
+                            ForEach(0...shortElements.count-1, id: \.self) {index in
+                                Text(shortElements[index].text)
+                                    .elementTitle()
+                            }
+                            
+                        }
+                        VStack (spacing: 22) {
+                            
+                            Menu {
+                                Button(action: {
+                                    pivotLevel = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    pivotLevel = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    pivotLevel = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    pivotLevel = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    pivotLevel = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(pivotLevel)")
+                            }
+                            
+                            HStack (spacing: 8) {
+                                Menu {
+                                    Button(action: {
+                                        noHoldLevel = "0"
+                                    }, label: {
+                                        Text("BV")
+                                    })
+                                    Button(action: {
+                                        noHoldLevel = "1"
+                                    }, label: {
+                                        Text("1")
+                                    })
+                                    Button(action: {
+                                        noHoldLevel = "2"
+                                    }, label: {
+                                        Text("2")
+                                    })
+                                    Button(action: {
+                                        noHoldLevel = "3"
+                                    }, label: {
+                                        Text("3")
+                                    })
+                                    Button(action: {
+                                        noHoldLevel = "4"
+                                    }, label: {
+                                        Text("4")
+                                    })
+                                    
+                                } label: {
+                                    Text("\(noHoldLevel)")
+                                }
+                                
+                                Menu {
+                                    Button(action: {
+                                        noHoldSteps = "0"
+                                    }, label: {
+                                        Text("BV")
+                                    })
+                                    
+                                } label: {
+                                    Text("\(noHoldSteps)")
+                                }
+                            }
+                            
+                            HStack (spacing: 14) {
+                                Menu {
+                                    Button(action: {
+                                        triangleI = "0"
+                                    }, label: {
+                                        Text("BV")
+                                    })
+                                    Button(action: {
+                                        triangleI = "1"
+                                    }, label: {
+                                        Text("1")
+                                    })
+                                    Button(action: {
+                                        triangleI = "2"
+                                    }, label: {
+                                        Text("2")
+                                    })
+                                    Button(action: {
+                                        triangleI = "3"
+                                    }, label: {
+                                        Text("3")
+                                    })
+                                    Button(action: {
+                                        triangleI = "4"
+                                    }, label: {
+                                        Text("4")
+                                    })
+                                    
+                                } label: {
+                                    Text("\(triangleI)")
+                                }
+                                
+                                Menu {
+                                    Button(action: {
+                                        trianglePI = "0"
+                                    }, label: {
+                                        Text("BV")
+                                    })
+                                    Button(action: {
+                                        trianglePI = "1"
+                                    }, label: {
+                                        Text("1")
+                                    })
+                                    Button(action: {
+                                        trianglePI = "2"
+                                    }, label: {
+                                        Text("2")
+                                    })
+                                    Button(action: {
+                                        trianglePI = "3"
+                                    }, label: {
+                                        Text("3")
+                                    })
+                                    Button(action: {
+                                        trianglePI = "4"
+                                    }, label: {
+                                        Text("4")
+                                    })
+                                    
+                                } label: {
+                                    Text("\(trianglePI)")
+                                }
+                            }
+                            
+                            Menu {
+                                Button(action: {
+                                    twizzlesLevel = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    twizzlesLevel = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    twizzlesLevel = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    twizzlesLevel = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    twizzlesLevel = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(twizzlesLevel)")
+                            }
+                            
+                            Menu {
+                                Button(action: {
+                                    movesLevel = "0"
+                                }, label: {
+                                    Text("BV")
+                                })
+                                Button(action: {
+                                    movesLevel = "1"
+                                }, label: {
+                                    Text("1")
+                                })
+                                Button(action: {
+                                    movesLevel = "2"
+                                }, label: {
+                                    Text("2")
+                                })
+                                Button(action: {
+                                    movesLevel = "3"
+                                }, label: {
+                                    Text("3")
+                                })
+                                Button(action: {
+                                    movesLevel = "4"
+                                }, label: {
+                                    Text("4")
+                                })
+                                
+                            } label: {
+                                Text("\(movesLevel)")
+                            }
+                        }
+                        
+                        VStack (spacing: 8) {
+                            TextField("GOE", text: $pivotGOE)
+                                .gOEInput()
+                            TextField("GOE", text: $noHoldGOE)
+                                .gOEInput()
+                            TextField("GOE", text: $triangleGOE)
+                                .gOEInput()
+                            TextField("GOE", text: $twizzlesGOE)
+                                .gOEInput()
+                            TextField("GOE", text: $movesGOE)
+                                .gOEInput()
+                        }
+                        
+                        VStack (spacing: 19.5) {
+                            Text("\(finalPivotValue)")
+                                .elementResult()
+                            Text("\(finalSNoHoldValue)")
+                                .elementResult()
+                            Text("\(finalTriangleValue)")
+                                .elementResult()
+                            Text("\(finalTwizzlesValue)")
+                                .elementResult()
+                            Text("\(finalMovesValue)")
+                                .elementResult()
+                            //          Text("\(techScore)")
+                        }
                     }
                 }
                 
-                Spacer()
+   //             Spacer()
+                
+                VStack {
                 
                 Text("Component Score")
                     .breakdownTitle()
                 
-                HStack (spacing: 20) {
-                    VStack (spacing: 28) {
-                        Text("Composition")
-                            .elementTitle()
-                        Text("Presentation")
-                            .elementTitle()
-                        Text("Skating Skills")
-                            .elementTitle()
+                    HStack (spacing: 20) {
+                        VStack (spacing: 28) {
+                            Text("Composition")
+                                .elementTitle()
+                            Text("Presentation")
+                                .elementTitle()
+                            Text("Skating Skills")
+                                .elementTitle()
+                        }
+                        VStack{
+                            TextField("Score", text: $compScore)
+                                .textFieldStyle(.roundedBorder)
+                                .font(.callout)
+                                .font(.caption)
+                                .frame(maxWidth:65, maxHeight: 40)
+                            TextField("Score", text: $presScore)
+                                .textFieldStyle(.roundedBorder)
+                                .font(.callout)
+                                .font(.caption)
+                                .frame(maxWidth:65, maxHeight: 40)
+                            TextField("Score", text: $ssScore)
+                                .textFieldStyle(.roundedBorder)
+                                .font(.callout)
+                                .font(.caption)
+                                .frame(maxWidth:65, maxHeight: 40)
+                        }
+                        //                  VStack{
+                        //                       Text("Total:")
+                        //                       .font(.title3)
+                        //                        .foregroundColor(Color("Navy"))
+                        //                     Text("\(finalComponentScore)")
+                        //                        .elementResult()
+                        //                  }
+                        //         }
+                        
                     }
-                    VStack{
-                        TextField("Score", text: $compScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
-                        TextField("Score", text: $presScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
-                        TextField("Score", text: $ssScore)
-                            .textFieldStyle(.roundedBorder)
-                            .font(.callout)
-                            .font(.caption)
-                            .frame(maxWidth:65, maxHeight: 40)
-                    }
-                    //                  VStack{
-                    //                       Text("Total:")
-                    //                       .font(.title3)
-                    //                        .foregroundColor(Color("Navy"))
-                    //                     Text("\(finalComponentScore)")
-                    //                        .elementResult()
-                    //                  }
-                    //         }
-                    
-                    
                 }
                 
-                Spacer()
+   //             Spacer()
                 
                 HStack (spacing: 18) {
                     Text("Deductions")
@@ -588,45 +592,46 @@ struct ShortProgram: View {
                         .padding(26)
                 }
                 
-                HStack (spacing: 20){
-                    Button(action: {
-                        let pivottt = correctPivotLevel (level: "\(pivotLevel)")
-                        let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
-                        let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
-                        let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
-                        let movesss = correctSMovesLevel(level: "\(movesLevel)")
-                        
-                        deductionScore = Double(deductions)!
-                        
-                        finalPivotValue = String(format: "%.2f", pivottt)
-                        finalSNoHoldValue = String(format: "%.2f", noHolddd)
-                        finalTriangleValue = String(format: "%.2f", triangleee)
-                        finalTwizzlesValue = String(format: "%.2f", twizzlesss)
-                        finalMovesValue = String(format: "%.2f", movesss)
-                        let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
-                        finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
-                        techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
-                        yourScore = techScore + (componentScore * 1.3) - deductionScore
-                        finalTotalScore = String(format: "%.2f", yourScore)
-                        
-                        reorder(score: yourScore)
-                        
-                   //     worldScoreList.append(yourScore)
-                        
-             //           worldTeamList.insert(teamName, at: 0)
-                        
-                        //here is where I will add the score onto the list and maybe either here or on the next page ask for a team name
-                        
-                    }){
-                        Text("Calculate")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: 110, maxHeight: 42)
-                            .padding(4)
-                    }
-                    .background(Color("Navy"))
-                    .clipShape(Capsule())
+                Button(action: {
+                    let pivottt = correctPivotLevel (level: "\(pivotLevel)")
+                    let noHolddd = correctNoHoldLevel(level: "\(triangleI)", steps: "\(trianglePI)")
+                    let triangleee = correctTriangleLevel(I: "\(triangleI)", PI: "\(trianglePI)")
+                    let twizzlesss = correctTwizzlesLevel(level: "\(twizzlesLevel)")
+                    let movesss = correctSMovesLevel(level: "\(movesLevel)")
+                    
+                    deductionScore = Double(deductions)!
+                    
+                    finalPivotValue = String(format: "%.2f", pivottt)
+                    finalSNoHoldValue = String(format: "%.2f", noHolddd)
+                    finalTriangleValue = String(format: "%.2f", triangleee)
+                    finalTwizzlesValue = String(format: "%.2f", twizzlesss)
+                    finalMovesValue = String(format: "%.2f", movesss)
+                    let componentScore = Double(compScore)! + Double(presScore)! + Double(ssScore)!
+                    finalComponentScore = String(format: "%.2f", (componentScore * 1.3))
+                    techScore = pivottt + noHolddd + triangleee + twizzlesss + movesss
+                    yourScore = techScore + (componentScore * 1.3) - deductionScore
+                    finalTotalScore = String(format: "%.2f", yourScore)
+                    
+                    reorder(score: yourScore)
+                    
+                }){
+                    Text("Calculate")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: 110, maxHeight: 42)
+                        .padding(1)
+                }
+                .background(Color("Navy"))
+                .clipShape(Capsule())
+                
+                HStack (spacing: 20) {
+                    TextField("Team Name", text: $teamName)
+                        .textFieldStyle(.roundedBorder)
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth:100, maxHeight: 40)
+                        .padding()
                     
                     NavigationLink {
                         WorldShortRankings()
@@ -635,7 +640,7 @@ struct ShortProgram: View {
                     }
                 }
                 
-                Spacer()
+ //               Spacer()
                 
             }
                   .navigationBarHidden(true)

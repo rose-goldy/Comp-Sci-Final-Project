@@ -41,7 +41,7 @@ struct WorldShortRankings: View {
 //                        .font(.callout)
 //                        .multilineTextAlignment(.center)
 //                        .frame(maxWidth:110, maxHeight: 40)
-//
+
 //                    TextField("Score", text: $yourNewScore)
 //                        .textFieldStyle(.roundedBorder)
 //                        .font(.callout)
