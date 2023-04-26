@@ -652,7 +652,7 @@ struct ShortProgram: View {
     struct ShortProgram_Previews: PreviewProvider {
         static var previews: some View {
             ShortProgram()
-                .environmentObject(Functions())
+               .environmentObject(Functions())
         }
     }
 

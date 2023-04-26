@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B0DE2B129F6B7DE006F4554 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DE2B029F6B7DE006F4554 /* Rank.swift */; };
 		8B12D29229C27C000070A8F8 /* OpenShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */; };
 		8B248DDB29C4D7F000E145AF /* ElementDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B248DDA29C4D7F000E145AF /* ElementDetail.swift */; };
 		8B49F5AA29B8E39000E360BB /* AP_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5A929B8E39000E360BB /* AP_AppApp.swift */; };
@@ -29,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8B0DE2B029F6B7DE006F4554 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenShortProgram.swift; sourceTree = "<group>"; };
 		8B248DDA29C4D7F000E145AF /* ElementDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetail.swift; sourceTree = "<group>"; };
 		8B49F5A629B8E39000E360BB /* AP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,7 +119,6 @@
 				8B49F5BF29B8E45800E360BB /* LongPButton.swift */,
 				8B8498C029C2BBAF00B93ABB /* Functions.swift */,
 				8B709C3729F2D7ED00AA3DD9 /* LeaveCalculator.swift */,
-				8B0DE2B029F6B7DE006F4554 /* Rank.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B0DE2B129F6B7DE006F4554 /* Rank.swift in Sources */,
 				8B49F5AC29B8E39000E360BB /* ContentView.swift in Sources */,
 				8B248DDB29C4D7F000E145AF /* ElementDetail.swift in Sources */,
 				8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */,

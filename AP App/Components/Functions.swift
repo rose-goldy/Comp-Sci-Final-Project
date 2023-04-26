@@ -40,9 +40,9 @@ class Functions: ObservableObject {
     @Published private(set) var fourthElement: String = "Element 4"
     @Published private(set) var fifthElement: String = "Element 5"
     @Published private(set) var yourScore: Double = 0.0
-    
+
     var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
-    
+
     func reorder (score: Double) {
         //score will be yourScore
         for index in 0...worldTeamAndScoreList.count-1 {
@@ -54,8 +54,8 @@ class Functions: ObservableObject {
             }
         }
     }
-    
-    
+
+
     func correctPivotLevel (level: String) -> Double {
         if (level) == "0" {
             let pivotValue = (Double(pivotGOE)! * 0.1 * pivotBlock.level00) + pivotBlock.level00
@@ -74,7 +74,7 @@ class Functions: ObservableObject {
             return pivotValue
         }
     }
-    
+
     func correctNoHoldLevel (level: String, steps: String) -> Double {
         if level == "0" && steps == "0" {
             let noHoldValue = (Double(noHoldGOE)! * 0.1 * noHold.level00) + noHold.level00
@@ -153,7 +153,7 @@ class Functions: ObservableObject {
             return noHoldValue
         }
     }
-    
+
     func correctTriangleLevel (I: String, PI: String) -> Double {
         if I == "0" && PI == "0" {
             let triangleValue = (Double(triangleGOE)! * 0.1 * triangle.level00) + triangle.level00
@@ -232,7 +232,7 @@ class Functions: ObservableObject {
             return triangleValue
         }
     }
-    
+
     func correctTwizzlesLevel (level: String) -> Double {
         if (level) == "0" {
             let twizzlesValue = (Double(twizzlesGOE)! * 0.1 * twizzles.level00) + twizzles.level00
@@ -251,7 +251,7 @@ class Functions: ObservableObject {
             return twizzlesValue
         }
     }
-    
+
     func correctSMovesLevel (level: String) -> Double {
         if (level) == "0" {
             let movesValue = (Double(movesGOE)! * 0.1 * moves.level00) + moves.level00
@@ -270,11 +270,11 @@ class Functions: ObservableObject {
             return movesValue
         }
     }
-    
-  
-    
-    
-    
+
+
+
+
+
 //    func setUp(element: String) {
 //        Menu {
 //            ForEach(0...4, id: \.self) {index in
@@ -295,12 +295,12 @@ class Functions: ObservableObject {
 //        Text("\(finalPivotValue)")
 //            .elementResult()
 //    }
-//    
-    
-    
-    
-    
-    
+//
+
+
+
+
+
 //    func setUp() {
 //        ForEach(0...possibleSElements.count-1, id: \.self) {element in
 //            if possibleSElements[element] == "Pivot Block" {
@@ -440,8 +440,8 @@ class Functions: ObservableObject {
 //                }
 //            }
 //        }
-    
-    
+
+
 //    func elementSetUp (element: String) {
 //        if index == "Pivot Block" {
 //            HStack{
@@ -686,5 +686,5 @@ class Functions: ObservableObject {
 //            }
 //        }
 //    }
-    
+
 }
