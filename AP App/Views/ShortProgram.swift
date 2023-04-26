@@ -46,7 +46,7 @@ struct ShortProgram: View {
         for index in 0...worldTeamAndScoreList.count-1 {
         // (0...worldScoreList.count-1, id:\.self) { index in
             if score > worldScoreList[Int(index)] {
-                worldTeamAndScoreList.insert("You!: \(String(score))", at: Int(index))
+                worldTeamAndScoreList.insert("\(teamName): \(finalTotalScore)", at: Int(index))
                 return
             }
         }
@@ -630,7 +630,7 @@ struct ShortProgram: View {
                         .textFieldStyle(.roundedBorder)
                         .font(.callout)
                         .multilineTextAlignment(.center)
-                        .frame(maxWidth:100, maxHeight: 40)
+                        .frame(maxWidth:150, maxHeight: 40)
                         .padding()
                     
                     NavigationLink {
@@ -643,8 +643,8 @@ struct ShortProgram: View {
  //               Spacer()
                 
             }
-                  .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
         }
     }
     

@@ -12,7 +12,7 @@ struct FirstView: View {
     var body: some View {
         NavigationView {
             VStack (spacing: 100) {
-                Text("Northernettes Junior 2022-2023\nIJS Score Calculator")
+                Text("Junior Synchronized Skating\n2022-2023\nIJS Score Calculator")
                     .font(.title)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: 350, maxHeight: 200)

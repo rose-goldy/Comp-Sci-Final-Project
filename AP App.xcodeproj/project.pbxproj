@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8B0DE2B129F6B7DE006F4554 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DE2B029F6B7DE006F4554 /* Rank.swift */; };
-		8B12D29029C272490070A8F8 /* elementDropdownTrial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */; };
 		8B12D29229C27C000070A8F8 /* OpenShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */; };
 		8B248DDB29C4D7F000E145AF /* ElementDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B248DDA29C4D7F000E145AF /* ElementDetail.swift */; };
 		8B49F5AA29B8E39000E360BB /* AP_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5A929B8E39000E360BB /* AP_AppApp.swift */; };
@@ -22,7 +21,6 @@
 		8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C329B8E47B00E360BB /* ShortProgram.swift */; };
 		8B49F5C629B8E48400E360BB /* LongProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C529B8E48400E360BB /* LongProgram.swift */; };
 		8B49F5C829B8E52000E360BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B49F5C729B8E52000E360BB /* Extensions.swift */; };
-		8B4F3B7D29F2CF43003FE9CA /* OneTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4F3B7C29F2CF43003FE9CA /* OneTeamView.swift */; };
 		8B709C3829F2D7ED00AA3DD9 /* LeaveCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B709C3729F2D7ED00AA3DD9 /* LeaveCalculator.swift */; };
 		8B8498C129C2BBAF00B93ABB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8498C029C2BBAF00B93ABB /* Functions.swift */; };
 		8BA8A69E29ED85AC00BAB6EA /* MoveElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA8A69D29ED85AC00BAB6EA /* MoveElements.swift */; };
@@ -32,7 +30,6 @@
 
 /* Begin PBXFileReference section */
 		8B0DE2B029F6B7DE006F4554 /* Rank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
-		8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = elementDropdownTrial.swift; sourceTree = "<group>"; };
 		8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenShortProgram.swift; sourceTree = "<group>"; };
 		8B248DDA29C4D7F000E145AF /* ElementDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementDetail.swift; sourceTree = "<group>"; };
 		8B49F5A629B8E39000E360BB /* AP App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AP App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +44,6 @@
 		8B49F5C329B8E47B00E360BB /* ShortProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortProgram.swift; sourceTree = "<group>"; };
 		8B49F5C529B8E48400E360BB /* LongProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongProgram.swift; sourceTree = "<group>"; };
 		8B49F5C729B8E52000E360BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8B4F3B7C29F2CF43003FE9CA /* OneTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTeamView.swift; sourceTree = "<group>"; };
 		8B709C3729F2D7ED00AA3DD9 /* LeaveCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveCalculator.swift; sourceTree = "<group>"; };
 		8B8498C029C2BBAF00B93ABB /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8BA8A69D29ED85AC00BAB6EA /* MoveElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveElements.swift; sourceTree = "<group>"; };
@@ -110,9 +106,7 @@
 				8B49F5C129B8E46C00E360BB /* FirstView.swift */,
 				8B49F5C329B8E47B00E360BB /* ShortProgram.swift */,
 				8BA8A69F29ED895B00BAB6EA /* WorldShortRankings.swift */,
-				8B4F3B7C29F2CF43003FE9CA /* OneTeamView.swift */,
 				8B49F5C529B8E48400E360BB /* LongProgram.swift */,
-				8B12D28F29C272490070A8F8 /* elementDropdownTrial.swift */,
 				8B12D29129C27C000070A8F8 /* OpenShortProgram.swift */,
 				8B248DDA29C4D7F000E145AF /* ElementDetail.swift */,
 				8BA8A69D29ED85AC00BAB6EA /* MoveElements.swift */,
@@ -221,12 +215,10 @@
 				8B49F5C429B8E47B00E360BB /* ShortProgram.swift in Sources */,
 				8B49F5BE29B8E44D00E360BB /* ShortPButton.swift in Sources */,
 				8B49F5C629B8E48400E360BB /* LongProgram.swift in Sources */,
-				8B4F3B7D29F2CF43003FE9CA /* OneTeamView.swift in Sources */,
 				8B49F5C029B8E45800E360BB /* LongPButton.swift in Sources */,
 				8BA8A6A029ED895B00BAB6EA /* WorldShortRankings.swift in Sources */,
 				8B49F5AA29B8E39000E360BB /* AP_AppApp.swift in Sources */,
 				8B12D29229C27C000070A8F8 /* OpenShortProgram.swift in Sources */,
-				8B12D29029C272490070A8F8 /* elementDropdownTrial.swift in Sources */,
 				8BA8A69E29ED85AC00BAB6EA /* MoveElements.swift in Sources */,
 				8B709C3829F2D7ED00AA3DD9 /* LeaveCalculator.swift in Sources */,
 				8B49F5BC29B8E43600E360BB /* Elements.swift in Sources */,

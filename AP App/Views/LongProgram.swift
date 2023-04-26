@@ -842,7 +842,7 @@ struct LongProgram: View {
             .clipShape(Capsule())
             
         }
-        .navigationBarHidden(true)
+  //      .navigationBarHidden(true)
     }
 }
 

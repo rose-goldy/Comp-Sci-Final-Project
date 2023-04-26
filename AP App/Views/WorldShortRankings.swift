@@ -58,7 +58,7 @@ struct WorldShortRankings: View {
 //                    })
 //                }
                 
-                Text("World Junior Short Ranking")
+                Text("World Junior Short Rankings")
                     .ignoresSafeArea()
                     .font(.title)
                     .fontWeight(.bold)
