@@ -41,15 +41,6 @@ struct ElementDetail: View {
     @State var fifthElement: String = "Element 5"
     @State var selectedElement: String = "Element"
     
-//    @State var element = "firstElement"
-
-    
-    //ROSE
-//        ROSE
-//        ROSE
-//        ROSE
-//        NEXT THING TO DO IS MODIFY EACH INDIVIDUAL ELEMENT SO THAT THE SPACING WILL BE DIFFERENT (I.E. FOR THE NO HOLD WHICH HAS TWO INPUTS, THE NO HOLD BOX TEXT THING SHOULD BE SMALLER)
-    
       var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
     
     var body: some View {
@@ -72,8 +63,6 @@ struct ElementDetail: View {
                         .frame(maxWidth: 165)
                         .padding()
                 }
-                //                   functions.setUp(element: firstElement)
-                //closure, subview
                 if firstElement == "Pivot Block" {
                     Menu {
                         ForEach(0...4, id: \.self) {index in
@@ -486,8 +475,6 @@ struct ElementDetail: View {
                         .frame(maxWidth: 165)
                         .padding()
                 }
-                //                   functions.setUp(element: firstElement)
-                //closure, subview
                 if fourthElement == "Pivot Block" {
                     Menu {
                         ForEach(0...4, id: \.self) {index in

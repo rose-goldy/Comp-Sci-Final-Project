@@ -5,19 +5,10 @@
 
 import SwiftUI
 
-//class OpenShortProgram: ObservableObject {
     struct OpenShortProgram: View {
-  //      @EnvironmentObject var functions = Functions
         @EnvironmentObject var functions: Functions
    
         
-        //now figure out how to add all the element values
-        
-        //ROSE
-//        ROSE
-//        ROSE
-//        ROSE
-//        NEXT THING TO DO IS MODIFY EACH INDIVIDUAL ELEMENT SO THAT THE SPACING WILL BE DIFFERENT (I.E. FOR THE NO HOLD WHICH HAS TWO INPUTS, THE NO HOLD BOX TEXT THING SHOULD BE SMALLER)
         
         @State var pivotGOE: String = ""
         @State var noHoldGOE: String = ""
@@ -51,10 +42,6 @@ import SwiftUI
         @State var fifthElement: String = "Element 5"
         @State var selectedElement: String = "Element"
         
-    //    @State var element = "firstElement"
-
-        
-        //   var shortElements: [String] = [firstElement, secondElement, thirdElement, fourthElement, fifthElement]
           var possibleSElements: [String] = ["Pivot Block", "No Hold", "Triangle Intersection", "Twizzles", "Moves"]
         
         var body: some View {
