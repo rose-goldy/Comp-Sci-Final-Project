@@ -2,8 +2,6 @@
 //  WorldShortRankings.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 4/17/23.
-//
 
 import SwiftUI
 

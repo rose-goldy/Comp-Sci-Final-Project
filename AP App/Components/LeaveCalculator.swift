@@ -2,8 +2,6 @@
 //  LeaveCalculator.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 4/21/23.
-//
 
 import SwiftUI
 

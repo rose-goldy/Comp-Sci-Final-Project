@@ -2,8 +2,6 @@
 //  OpenShortProgram.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 3/15/23.
-//
 
 import SwiftUI
 

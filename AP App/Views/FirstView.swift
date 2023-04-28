@@ -2,8 +2,6 @@
 //  FirstView.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 3/8/23.
-//
 
 import SwiftUI
 

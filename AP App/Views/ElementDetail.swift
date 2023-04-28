@@ -2,8 +2,6 @@
 //  ElementDetail.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 3/17/23.
-//
 
 import SwiftUI
 

@@ -2,8 +2,6 @@
 //  ShortProgram.swift
 //  AP App
 //
-//  Created by Rose Goldenberg23 on 3/8/23.
-//
 
 import SwiftUI
 
@@ -42,9 +40,7 @@ struct ShortProgram: View {
  //   @Published var yourScore: Double = 0.0
     
     func reorder (score: Double) {
-        //score will be yourScore
         for index in 0...worldTeamAndScoreList.count-1 {
-        // (0...worldScoreList.count-1, id:\.self) { index in
             if score > worldScoreList[Int(index)] {
                 worldTeamAndScoreList.insert("\(teamName): \(finalTotalScore)", at: Int(index))
                 return
